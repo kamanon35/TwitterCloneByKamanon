@@ -1,8 +1,8 @@
-INSERT INTO usr (user_name, password, handle_name, email_addr, sex, birthday, create_date, updated)
+INSERT INTO usr (user_name, password, handle_name, email_addr, sex, birthday, created, updated)
 VALUES ('suzuki', 'psuzuki', 'suzuchan', 'suzu@gmaaail.com', '0', DATE'2000-01-02', current_timestamp, current_timestamp);
-INSERT INTO usr (user_name, password, handle_name, email_addr, sex, birthday, create_date, updated)
+INSERT INTO usr (user_name, password, handle_name, email_addr, sex, birthday, created, updated)
 VALUES ('uchimura', 'puchimura', 'uchan', 'uchi@gmaaail.com', '1', DATE'2001-02-03', current_timestamp, current_timestamp);
-INSERT INTO usr (user_name, password, handle_name, email_addr, sex, birthday, create_date, updated)
+INSERT INTO usr (user_name, password, handle_name, email_addr, sex, birthday, created, updated)
 VALUES ('takizawa', 'ptakizawa', 'takky', 'taki@gmaaail.com', '0', DATE'2001-02-03', current_timestamp, current_timestamp);
 
 INSERT INTO tweet (user_id, tweet)

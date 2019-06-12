@@ -8,7 +8,7 @@
 drop table if exists tweet cascade;
 
 create table tweet (
-  user_id BIGINT not null
+  user_id BIGINT NOT NULL
   , tweet TEXT not null
   , created TIMESTAMP
 ) ;
@@ -17,7 +17,7 @@ create table tweet (
 drop table if exists follow cascade;
 
 create table follow (
-  user_id BIGINT not null
+  user_id BIGINT NOT NULL
   , follow_user_id BIGINT not null
 ) ;
 
@@ -32,9 +32,9 @@ create table usr (
   , email_addr VARCHAR(255)
   , sex CHAR
   , birthday DATE
-  , created TIMESTAMP
-  , updated TIMESTAMP
-  , constraint usr_PKC primary key (user_id)
+  , created TIMESTAMP not null
+  , updated TIMESTAMP not null
+  , CONSTRAINT user_id PRIMARY KEY(user_id)
 ) ;
 
 comment on table tweet is 'ツイート管理テーブル:ツイートを管理するテーブル。';
@@ -53,5 +53,5 @@ comment on column usr.handle_name is 'ハンドルネーム';
 comment on column usr.email_addr is 'メールアドレス';
 comment on column usr.sex is '性別';
 comment on column usr.birthday is '生年月日';
-comment on column usr.create_date is '作成日時';
-comment on column usr.last_update_date is '最終更新日時';
+comment on column usr.created is '作成日時';
+comment on column usr.updated is '最終更新日時';
