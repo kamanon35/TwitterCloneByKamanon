@@ -4,7 +4,7 @@
 -- RDBMS Type   : PostgreSQL
 -- Application  : A5:SQL Mk-2
 
--- ツイート管理
+-- tweet
 drop table if exists tweet cascade;
 
 create table tweet (
@@ -13,12 +13,13 @@ create table tweet (
   , created TIMESTAMP
 ) ;
 
--- フォロー管理
+-- フォロー
 drop table if exists follow cascade;
 
 create table follow (
   user_id BIGINT NOT NULL
   , follow_user_id BIGINT not null
+  , created TIMESTAMP
 ) ;
 
 -- ユーザー
@@ -26,7 +27,7 @@ drop table if exists usr cascade;
 
 create table usr (
   user_id BIGSERIAL not null
-  , user_name VARCHAR(255) not null
+  , user_name VARCHAR(255) not null unique
   , password VARCHAR(255) not null
   , handle_name VARCHAR(255)
   , email_addr VARCHAR(255)

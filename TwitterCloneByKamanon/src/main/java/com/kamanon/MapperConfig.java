@@ -9,5 +9,4 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.kamanon.domain.model.mybatis.mapper")
 public class MapperConfig {
-
 }
