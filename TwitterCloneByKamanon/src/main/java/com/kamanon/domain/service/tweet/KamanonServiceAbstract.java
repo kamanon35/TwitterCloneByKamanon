@@ -13,13 +13,12 @@ import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
  */
 public abstract class KamanonServiceAbstract implements KamanonServiceBase {
 
-	@Autowired
-	TwitterInfoSelectResult _twitterInfoSelectResult;
-
 	public TwitterInfoSelectResult executeService(TwitterInfoSelectKey key, Model model) {
+		
+		TwitterInfoSelectResult twitterInfoSelectResult = new TwitterInfoSelectResult();
 
 		try {
-			_twitterInfoSelectResult = execute(key);
+			twitterInfoSelectResult = execute(key);
 
 		} catch (KamanonBusinessException k) {
 			model.addAttribute("error", k.getMessage());
@@ -29,7 +28,7 @@ public abstract class KamanonServiceAbstract implements KamanonServiceBase {
 			model.addAttribute("error", e.getMessage());
 		}
 
-		return _twitterInfoSelectResult;
+		return twitterInfoSelectResult;
 	}
 
 	/**

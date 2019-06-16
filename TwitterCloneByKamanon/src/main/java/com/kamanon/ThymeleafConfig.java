@@ -14,6 +14,5 @@ public class ThymeleafConfig {
 	}
 
 	public ThymeleafConfig() {
-
 	}
 }

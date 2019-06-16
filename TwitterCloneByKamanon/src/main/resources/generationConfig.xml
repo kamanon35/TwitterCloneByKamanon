@@ -28,9 +28,16 @@
 
     <!-- コードを生成するテーブルを指定 -->
     <!-- schemaではなくcatalogにすることで生成成功した？ -->
-    <table catalog="tck" tableName="usr" />
-    <table catalog="tck" tableName="tweet" />
-    <table catalog="tck" tableName="follow" />
-
+    <table catalog="tck" tableName="usr">
+ 	  <columnOverride column="birthday" javaType="java.time.LocalDate" />
+  	  <columnOverride column="created" javaType="java.time.LocalDateTime" />
+  	  <columnOverride column="updated" javaType="java.time.LocalDateTime" />
+    </table>
+    <table catalog="tck" tableName="tweet" >
+ 	   <columnOverride column="created" javaType="java.time.LocalDate" />
+    </table>
+    <table catalog="tck" tableName="follow" >
+		<columnOverride column="created" javaType="java.time.LocalDate" />
+	</table>
   </context>
 </generatorConfiguration>

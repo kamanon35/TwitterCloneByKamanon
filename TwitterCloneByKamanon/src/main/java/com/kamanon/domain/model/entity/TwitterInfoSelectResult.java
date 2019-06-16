@@ -17,7 +17,7 @@ public class TwitterInfoSelectResult implements Serializable{
 	// ユーザー情報
 	UserInfo userInfo;
 	
-	// キーワードで検索した内容を保持
+	// キーワードで検索したツイート一覧を保持
 	List<Tweet> selectResultTweetList;
 	
 }

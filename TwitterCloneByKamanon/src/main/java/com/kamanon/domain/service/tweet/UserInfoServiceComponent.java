@@ -28,19 +28,13 @@ import com.kamanon.domain.model.mybatis.mapper.UsrMapper;
 public class UserInfoServiceComponent {
 	
 	@Autowired
-	UsrMapper usrMapper;
+	UsrMapper _usrMapper;
 	
 	@Autowired
-	TweetMapper tweetMapper;
+	TweetMapper _tweetMapper;
 	
 	@Autowired
-	FollowMapper followMapper;
-	
-	@Autowired
-	TwitterInfoSelectResult twitterInfoSelectResult;
-	
-	@Autowired
-	UserInfo userInfo;
+	FollowMapper _followMapper;
 	
 	/**
 	 * userNameをキーに、ユーザー情報を取得する
@@ -50,40 +44,40 @@ public class UserInfoServiceComponent {
 	public TwitterInfoSelectResult selectUserInfoByUserName(TwitterInfoSelectKey key) {
 		
 		String userName = key.getUserName();
+		UserInfo userInfo = new UserInfo();
 		
-		// usrをセット
+		// usrテーブル情報を取得
 		userInfo.setUsr(this.selectUsrByUserName(userName));
 		
 		Long userId = userInfo.getUsr().getUserId();
+		
+		// tweetテーブル情報を取得
+		userInfo.setTweetList(this.selectTweetByUserId(userId));
+		
+		// followテーブル情報を取得
+		userInfo.setFollowList(this.selectFollowByUserId(userId));
+		
+		TwitterInfoSelectResult twitterInfoSelectResult = new TwitterInfoSelectResult();
+		twitterInfoSelectResult.setUserInfo(userInfo);
+		
 		return twitterInfoSelectResult;
-		
-		
 	}
 	
-	/**
-	 * @param userName ユーザー名
-	 * @return ユーザー情報
-	 */
 	private Usr selectUsrByUserName(String userName) {
 		UsrExample where = new UsrExample();
 		where.createCriteria().andUserNameEqualTo(userName);
-		return usrMapper.selectByExample(where).get(0);
+		return _usrMapper.selectByExample(where).get(0);
 	}
 	
-	/**
-	 * @param userId ユーザーID
-	 * @return ツイートリスト
-	 */
 	private List<Tweet> selectTweetByUserId(Long userId) {
 		TweetExample where = new TweetExample();
 		where.createCriteria().andUserIdEqualTo(userId);
-		return tweetMapper.selectByExample(where);
+		return _tweetMapper.selectByExample(where);
 	}
-	
+
 	private List<Follow> selectFollowByUserId(Long userId){
 		FollowExample where = new FollowExample();
 		where.createCriteria().andUserIdEqualTo(userId);
-		return followMapper.selectByExample(where);
+		return _followMapper.selectByExample(where);
 	}
-	
 }
