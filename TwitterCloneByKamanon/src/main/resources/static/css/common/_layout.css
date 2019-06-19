@@ -1,5 +1,53 @@
 @charset "UTF-8";
 
-.container{
-	padding: 0px 50px;
+body{
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Font Awesome 5 Free";
+}
+
+.fa{
+  padding-right: 10px;
+}
+
+header {
+  background-color: whote;
+  height: 50px;
+  border-bottom: 2px solid #ddd;
+  width: 100%;
+}
+
+header li {
+  float: left;
+  list-style: none;
+  padding: 10px 20px 20px 10px;
+  color: #777777;
+}
+
+.container {
+  padding: 0px 50px;
+}
+
+.header-center {
+  float: left;
+}
+
+.header-logo {
+  text-align: center;
+	display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.header-right{
+	float: right;
+}
+
+.search_key{
+	width: 200px;
+}
+
+.user_icon{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
 }

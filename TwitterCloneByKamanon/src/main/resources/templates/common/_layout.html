@@ -13,12 +13,10 @@
 	crossorigin="anonymous">
 
 <!--/* ヘッダー使用のスタイル設定 */-->
-<link rel="stylesheet" th:href="@{/css/common/header.css}" />
 <link rel="stylesheet" th:href="@{/css/common/_layout.css}" />
 
 <!--/* 画面固有のスタイル設定 */-->
 <th:block th:replace="${links}" />
-
 
 <!--/* タイトル設定 */-->
 <title th:text="${pageTitle}">Template title</title>
@@ -27,13 +25,33 @@
 <body>
 <!--*/ ヘッダー */-->
 	<header th:fragment="main_header">
-
-		<ul>
-			<li><span class="fa fa-home"></span>ホーム</li>
-			<li><span class="fa fa-bell"></span>通知</li>
-			<li><span class="fa fa-envelope"></span>メッセージ</li>
-		</ul>
+		<div class="header-left">
+			<ul>
+				<li><span class="fa fa-home"></span>ホーム</li>
+				<li><span class="fa fa-bell"></span>通知</li>
+				<li><span class="fa fa-envelope"></span>メッセージ</li>
+			</ul>
+		</div>
+		<div class="header-center">
+			<img class="header-logo" th:src="@{/image/header/bird_aoitori_bluebird.png}">
+		</div>
+		<div class="header-right">
+			<input class="search_key" type="text" name="search_key" value="キーワード検索">
+			<img class="user_icon" th:src="@{/image/header/bird_aoitori_bluebird.png}">
+		</div>
 	</header>
+
+
+
+
+
+
+
+
+	<!--*/ ユーザーページヘッダ画像 /*-->
+	<div class="user_header_image">
+
+	</div>
 
 </body>
 </html>
