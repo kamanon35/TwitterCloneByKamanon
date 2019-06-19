@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--/* ページヘッダー. */-->
+<head th:fragment="page_header(pageTitle, links)">
+<meta charset="UTF-8">
+<meta name="author" content="kamanon" />
+
+<!--/* アイコン読み込み */-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	crossorigin="anonymous">
+
+<!--/* ヘッダー使用のスタイル設定 */-->
+<link rel="stylesheet" th:href="@{/css/common/header.css}" />
+<link rel="stylesheet" th:href="@{/css/common/_layout.css}" />
+
+<!--/* 画面固有のスタイル設定 */-->
+<th:block th:replace="${links}" />
+
+
+<!--/* タイトル設定 */-->
+<title th:text="${pageTitle}">Template title</title>
+</head>
+
+<body>
+<!--*/ ヘッダー */-->
+	<header th:fragment="main_header">
+
+		<ul>
+			<li><span class="fa fa-home"></span>ホーム</li>
+			<li><span class="fa fa-bell"></span>通知</li>
+			<li><span class="fa fa-envelope"></span>メッセージ</li>
+		</ul>
+	</header>
+
+</body>
+</html>

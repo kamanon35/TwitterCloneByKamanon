@@ -1,6 +1,5 @@
 package com.kamanon.domain.service.tweet;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
 import com.kamanon.commons.KamanonBusinessException;
