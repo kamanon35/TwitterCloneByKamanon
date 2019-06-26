@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>test</title>
+</head>
+
+<body>
+
+<!-- 他テンプレートに注入したい共通部品にth:fragmentタグを付与する -->
+<!-- フォルダ名、ファイル名はスネークケースで繋げる（ファイル名拡張子は不要）
+      ↑…かと思ったが、読み込み側で呼び出す時に使う値であった。クラス名のようなもの-->
+  <footer th:fragment="common_footer">
+    共通フッターが入るううう
+  </footer>
+
+</body>
+
+</html>

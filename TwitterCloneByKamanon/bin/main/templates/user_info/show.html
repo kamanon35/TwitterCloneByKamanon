@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="common/_layout :: page_header(${userInfo.usr.userName} + 'さんのページ', ~{::link})">
-<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
+<head th:include="common/_layout :: page_head(${userInfo.usr.userName} + 'さんのページ', ~{::link})">
+	<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
 </head>
 
 <body>
-	<header th:replace="common/_layout :: main_header"></header>
-	
+	<!-- ヘッダー -->
+	<header th:replace="common/_layout :: page_header" th:remove="tag"></header>
+
+
 
 </body>
+
 </html>

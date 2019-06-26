@@ -1,53 +1,53 @@
 @charset "UTF-8";
 
-body{
-  margin: 0;
+html {
+  font-size: 100%;
+}
+
+body {
   font-family: "Hiragino Kaku Gothic ProN", "Font Awesome 5 Free";
+  line-height: 1.7;
+  color: #432;
 }
 
-.fa{
-  padding-right: 10px;
-}
-
-header {
-  background-color: whote;
-  height: 50px;
-  border-bottom: 2px solid #ddd;
-  width: 100%;
-}
-
-header li {
-  float: left;
+li {
   list-style: none;
-  padding: 10px 20px 20px 10px;
-  color: #777777;
 }
 
-.container {
-  padding: 0px 50px;
+a {
+  text-decoration: none;
 }
 
-.header-center {
-  float: left;
+img {
+  max-width: 100%;
 }
 
-.header-logo {
-  text-align: center;
-	display: inline-block;
-  width: 40px;
-  height: 40px;
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* スマートフォン向け余白の設定 */
+  padding: 0 4%;
 }
 
-.header-right{
-	float: right;
+.page-header{
+  display: flex;
+  justify-content: space-between;
 }
 
-.search_key{
-	width: 200px;
+/* ヘッダー */
+.header-left-nav{
+  display: flex;
+  padding: 10px;
+  background-color: skyblue;
+}
+.header-left-nav li{
+  padding: 0 10px 0;
+}
+.fa{
+  padding-right: 5px;
 }
 
-.user_icon{
-	display: inline-block;
-	width: 40px;
-	height: 40px;
+.header-center-logo{
+  height: 20px;
+  width: 20px;
 }

@@ -2,42 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <!--/* ページヘッダー. */-->
-<head th:fragment="page_header(pageTitle, links)">
-<meta charset="UTF-8">
-<meta name="author" content="kamanon" />
 
-<!--/* アイコン読み込み */-->
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-	crossorigin="anonymous">
+<head th:fragment="page_head(pageTitle, links)">
+	<meta charset="UTF-8">
+	<meta name="author" content="kamanon" />
+	<!-- デフォルトCSSのリセット -->
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<!-- Webフォント読み込み -->
+	<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+	<!--/* アイコン読み込み */-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!--/* ヘッダー使用のスタイル設定 */-->
+	<link rel="stylesheet" th:href="@{/css/common/_layout.css}" />
 
-<!--/* ヘッダー使用のスタイル設定 */-->
-<link rel="stylesheet" th:href="@{/css/common/_layout.css}" />
+	<!--/* 画面固有のスタイル設定 */-->
+	<th:block th:replace="${links}" />
 
-<!--/* 画面固有のスタイル設定 */-->
-<th:block th:replace="${links}" />
-
-<!--/* タイトル設定 */-->
-<title th:text="${pageTitle}">Template title</title>
+	<!--/* タイトル設定 */-->
+	<title th:text="${pageTitle}">Template title</title>
 </head>
 
 <body>
-<!--*/ ヘッダー */-->
-	<header th:fragment="main_header">
-		<div class="header-left">
-			<ul>
-				<li><span class="fa fa-home"></span>ホーム</li>
-				<li><span class="fa fa-bell"></span>通知</li>
-				<li><span class="fa fa-envelope"></span>メッセージ</li>
-			</ul>
-		</div>
-		<div class="header-center">
-			<img class="header-logo" th:src="@{/image/header/bird_aoitori_bluebird.png}">
-		</div>
-		<div class="header-right">
-			<input class="search_key" type="text" name="search_key" value="キーワード検索">
-			<img class="user_icon" th:src="@{/image/header/bird_aoitori_bluebird.png}">
+	<!--*/ ヘッダー */-->
+	<header th:fragment="page_header" th:remove="tag">
+		<div class="page-header wrapper">
+			<nav>
+				<ul class="header-left-nav">
+					<li><span class="fa fa-home sub"></span>ホーム</li>
+					<li><span class="fa fa-bell sub"></span>通知</li>
+					<li><span class="fa fa-envelope sub"></span>メッセージ</li>
+				</nav>
+			</div>
+			<img class="header-center-logo" th:src="@{/image/header/bird_aoitori_bluebird.png}">
+			<div class="header-right-nav">
+				<input class="search_key" type="text" name="search_key" value="キーワード検索">
+			</div>
 		</div>
 	</header>
 
@@ -54,4 +53,5 @@
 	</div>
 
 </body>
+
 </html>

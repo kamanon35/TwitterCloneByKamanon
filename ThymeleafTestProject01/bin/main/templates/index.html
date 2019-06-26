@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+  <!-- th:includeで注入したい部品を指定する（変な構文なので慣れること）
+th:includeと書き、値には「読み込むファイルの.htmlを抜いたパス :: th:fragmentに指定した値」というフォーマットで記述をします。 -->
+  <div th:include="common/footer :: common_footer"></div>
+</body>
+
+</html>
