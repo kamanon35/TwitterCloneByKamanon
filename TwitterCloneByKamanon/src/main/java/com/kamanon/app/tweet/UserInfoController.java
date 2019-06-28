@@ -35,6 +35,6 @@ public class UserInfoController {
 		UserInfo userInfo = twitterInfoSelectResult.getUserInfo();
 		model.addAttribute("userInfo", userInfo);
 		
-		return "/user_info/show";
+		return "user_info/show";
 	}
 }

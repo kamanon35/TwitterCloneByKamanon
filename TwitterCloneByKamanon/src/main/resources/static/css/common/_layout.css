@@ -35,7 +35,7 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   /* スマートフォン向け余白の設定 */
-  padding: 0 4%;
+  /* padding: 0 4%; */
 }
 
 .page-header {
@@ -104,7 +104,7 @@ nav {
 
 .search-key input {
   max-width: 100%;
-  border: 2px #f2f2f2 solid;
+  border: 2px #e9e9e9 solid;
   border-radius: 20px;
   transition: all 0.5s;
   /* 検索フォーム入力範囲設定 */
@@ -136,5 +136,4 @@ nav {
   font-size: 0.9rem;
   margin-left: 30px;
   padding: 0.5rem 1rem;
-  /* padding: 0.25rem 0 0 1.15rem; */
 }

@@ -8,11 +8,10 @@
 <body>
 	<!-- ヘッダー -->
 	<header th:replace="common/_layout :: page_header" th:remove="tag"></header>
-	<div class="header-user-image big-bg">
-		<div class="wrapper">
-
-		</div>
+	<div class="big-bg">
+		<img class="header-user-image" th:src="@{/image/user/header_image1.jpg}" th:alt="ユーザー指定ヘッダーイメージ">
 	</div>
+
 
 
 </body>
