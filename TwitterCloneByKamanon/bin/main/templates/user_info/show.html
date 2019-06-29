@@ -7,10 +7,35 @@
 
 <body>
 	<!-- ヘッダー -->
-	<header th:replace="common/_layout :: page_header" th:remove="tag"></header>
-	<div class="big-bg">
-		<img class="header-user-image" th:src="@{/image/user/header_image1.jpg}" th:alt="ユーザー指定ヘッダーイメージ">
+	<header th:replace="common/_layout :: page_header"></header>
+	<img class="header-user-image" th:src="@{/image/user/header_image1.jpg}" th:alt="ユーザーヘッダーイメージ">
+
+	<div class="main-nav-bar">
+		<div class="main-nav-wrapper wrapper">
+			<a class="icon main-nav-user-icon-link" th:href="@{#}">
+			<img class="icon main-nav-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ユーザーアイコン">
+		</a>
+			<ul class="main-nav-items">
+				<li class="main-nav-item  main-nav-tweets">
+					<p>ツイート</p>
+					<p class="main-nav-item-count">123</p>
+				</li>
+				<li class="main-nav-item main-nav-follows">
+					<p>フォロー</p>
+					<p class="main-nav-item-count">456</p>
+				</li>
+				<li class="main-nav-item main-nav-followers">
+					<p>フォロワー</p>
+					<p class="main-nav-item-count">789</p>
+				</li>
+			</ul>
+			<div class="btn main-nav-profile-edit-btn">
+			<a th:href="@{#}">プロフィールを編集</a>
+		</div>
 	</div>
+	</div>
+
+	
 
 
 

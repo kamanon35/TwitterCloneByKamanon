@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 	<!--/* ヘッダー使用のスタイル設定 */-->
 	<link rel="stylesheet" th:href="@{/css/common/_layout.css}" />
+	<!--/* ファビコンの設定 */-->
+	<link rel="icon" type="image/ping" th:href="@{/image/header/bird_aoitori_bluebird.png}">
 	<!--/* viewportの設定 */-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--/* 画面固有のスタイル設定 */-->
@@ -42,10 +44,10 @@
 							<button id="header-search-button" type="submit"><span class="fa fa-search"></span></button>
 						</li>
 						<li>
-							<img class="header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
+							<img class="icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
 						</li>
 						<li class="header-nav-tweet-box">
-							<a class="btn header-nav-tweet" href="#">ツイート</a>
+							<a class="btn header-nav-tweet" th:href="@{#}">ツイート</a>
 						</li>
 					</ul>
 				</form>
