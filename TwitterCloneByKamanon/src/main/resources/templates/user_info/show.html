@@ -13,14 +13,21 @@
 	<!-- メインナビバー -->
 	<div th:replace="common/_layout :: main-nav-bar-fragment"></div>
 	<!-- main -->
-	<main class="main-content">
+	<main id="main-content">
 		<div class="main-content-wrapper wrapper">
 			<div class="main-left-content" th:with="isEmpty=${userInfo.usr.handleName}">
 				<h2 class="main-left-content-handle-name"><a th:text="isEmpty ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}" th:href="@{#}"></a></h2>
-				<a class="main-left-content-user-name" th:text="${userInfo.usr.userName}" th:href="@{#}"></a>
+				<a class="main-left-content-user-name" th:text="'@' + ${userInfo.usr.userName}" th:href="@{#}"></a>
 			</div>
 			<div class="main-center-content">
-				Center
+				<nav class="main-center-content-nav">
+					<a href="#">ツイート</a>
+					<a href="#">ツイートと返信</a>
+					<a href="#">メディア</a>
+				</nav>
+				<div class="main-center-content-tweet">
+
+				</div>
 			</div>
 			<div class="main-right-content">
 				right
