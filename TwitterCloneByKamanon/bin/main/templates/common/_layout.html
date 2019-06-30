@@ -54,6 +54,33 @@
 			</nav>
 		</div>
 	</header>
+
+	<div th:fragment="main-nav-bar-fragment" th:remove="tag">
+		<div class="main-nav-bar">
+			<div class="main-nav-wrapper wrapper">
+				<a class="icon main-nav-user-icon-link" th:href="@{#}">
+								<img class="icon main-nav-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ユーザーアイコン">
+							</a>
+							<ul class="main-nav-items">
+								<li class="main-nav-item  main-nav-tweets">
+									<p>ツイート</p>
+									<p class="main-nav-item-count">123</p>
+								</li>
+								<li class="main-nav-item main-nav-follows">
+									<p>フォロー</p>
+									<p class="main-nav-item-count">456</p>
+								</li>
+								<li class="main-nav-item main-nav-followers">
+									<p>フォロワー</p>
+									<p class="main-nav-item-count">789</p>
+								</li>
+							</ul>
+							<div class="btn main-nav-profile-edit-btn">
+								<a th:href="@{#}">プロフィールを編集</a>
+			</div>
+		</div> <!-- /.main-nav-wrapper wrapper -->
+	</div> <!-- /.main-nav-bar -->
+	</div> <!-- /main-nav-bar-fragment -->
 </body>
 
 </html>
