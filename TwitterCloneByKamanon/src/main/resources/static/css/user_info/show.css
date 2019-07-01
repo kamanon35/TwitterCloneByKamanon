@@ -52,6 +52,7 @@
 .main-center-content {
   display: flex;
   flex-grow: 1.6;
+  flex-direction: column;
   background: white;
   height: 100%;
   width: 20rem;
@@ -61,14 +62,13 @@
 .main-center-content-nav {
   display: flex;
   align-items: center;
-  border-bottom: 2px grey solid;
+  border-bottom: 1px rgba(204, 204, 204, 0.6) solid;
   padding-left: 20px;
   height: 40px;
   width: 100%;
 }
 
 .main-center-content-nav a {
-  height: 1.5rem;
   margin-right: 20px;
   font-size: 1.15rem;
   color: #8cd08c;
@@ -76,7 +76,7 @@
 }
 
 .main-center-content-nav a:hover {
-  border-bottom: 2px lightgreen solid;
+  text-decoration: underline;
   color: lightgreen;
 }
 
@@ -86,4 +86,43 @@
   background: skyblue;
   height: 100%;
   margin-top: 10px;
+}
+
+.main-center-content-tweet-wrapper{
+  display: flex;
+  background: green;
+  height: 100%;
+}
+
+.tweet-wrapper{
+  /* display: flex; */
+  height: 500px;
+  background: #bababa;
+}
+
+.tweet-icon{
+  background: yellow;
+  width: 50px;
+}
+
+.tweet-user-info{
+  display: flex;
+  background: lightgreen;
+  height: 100%;
+}
+
+.tweet-menu{
+  background: skyblue;
+  height: 100%;
+}
+
+.tweet-text{
+  background: red;
+  height: 100%;
+}
+
+.tweet-action-list{
+  display: flex;
+  background: lightgrey;
+  height: 100%;
 }

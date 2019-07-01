@@ -16,6 +16,10 @@
 	<link rel="stylesheet" th:href="@{/css/common/_layout.css}" />
 	<!--/* ファビコンの設定 */-->
 	<link rel="icon" type="image/ping" th:href="@{/image/header/bird_aoitori_bluebird.png}">
+	<!--/* js読み込み */-->
+	<!-- <script th:src="@{/js/jquery-3.4.1.min.js}"></script> -->
+	<!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
 	<!--/* viewportの設定 */-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--/* 画面固有のスタイル設定 */-->
@@ -47,7 +51,7 @@
 							<img class="icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
 						</li>
 						<li class="header-nav-tweet-box">
-							<a class="btn header-nav-tweet" th:href="@{#}">ツイート</a>
+							<a class="btn" id="header-nav-tweet" th:href="@{#}">ツイート</a>
 						</li>
 					</ul>
 				</form>
@@ -81,6 +85,21 @@
 						</div> <!-- /.main-nav-wrapper wrapper -->
 					</div> <!-- /.main-nav-bar -->
 				</div> <!-- /main-nav-bar-fragment -->
+
+				<!-- script読み込み -->
+				<div th:fragment="load-scripts(scripts)" th:remove="tag">
+					<div class="load-scrips-main">
+
+						<!--/* 共通スクリプト設定 */-->
+
+						<script type="text/javascript" th:src="@{/js/common/layout.js}"></script>
+
+						<!--/* 画面固有スクリプト設定 */-->
+				    <th:block th:replace="${scripts}" />
+					</div>
+				</div>
+
+
 </body>
 
 </html>

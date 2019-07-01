@@ -3,7 +3,6 @@ package com.kamanon.domain.service.tweet;
 import org.springframework.stereotype.Service;
 
 import com.kamanon.domain.interfaces.TweetOperater;
-import com.kamanon.domain.model.mybatis.entity.Usr;
 
 /**
  * ツイート関連の操作を実施する

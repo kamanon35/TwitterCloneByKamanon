@@ -148,7 +148,7 @@ nav {
   line-height: 1;
 }
 
-.header-nav-tweet {
+#header-nav-tweet {
   display: inline-block;
   background: skyblue;
   color: white;

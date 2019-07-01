@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="common/_layout :: page_head(${userInfo.usr.userName} + 'さんのページ', ~{::link})">
+<head th:replace="common/_layout :: page_head(${userInfo.usr.userName} + 'さんのページ', ~{::link})">
 	<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
 </head>
 
@@ -25,7 +25,28 @@
 					<a href="#">ツイートと返信</a>
 					<a href="#">メディア</a>
 				</nav>
-				<div class="main-center-content-tweet">
+				<div class="main-center-content-tweet-wrapper">
+					<div class="tweet-icon">
+						<img class="icon" th:src="@{/image/user/coffee.png}" th:alt="ユーザーアイコン">
+					</div>
+					<div class="tweet-wrapper">
+						<div class="tweet-user-info">
+							<p>aaa</p>
+							<p>aaa</p>
+							<p>aaa</p>
+						</div>
+						<div class="tweet-menu">
+							<p>bbb</p>
+						</div>
+						<div class="tweet-text">
+							<p>ccc</p>
+						</div>
+						<div class="tweet-action-list">
+							<p>ddd</p>
+							<p>ddd</p>
+							<p>ddd</p>
+						</div>
+					</div>
 
 				</div>
 			</div>
@@ -35,7 +56,10 @@
 		</div>
 	</main>
 
+	<!--/* 画面固有 スクリプト設定 */-->
+	<div th:replace="common/_layout :: load-scripts(~{})" th:remove="tag">
 
+	</div>
 </body>
 
 </html>
