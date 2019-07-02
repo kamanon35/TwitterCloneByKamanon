@@ -16,8 +16,7 @@
 	<main id="main-content">
 		<div class="main-content-wrapper wrapper">
 			<div class="main-left-content">
-				<!-- <h2 class="main-left-content-handle-name"><a th:text="${userInfo.usr.userName == null} ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}" th:href="@{#}"></a></h2> -->
-				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo)} ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}" th:href="@{#}"></a></h2>
+				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo.usr.userName)} ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}" th:href="@{#}"></a></h2>
 				<a class="main-left-content-user-name" th:text="'@' + ${userInfo.usr.userName}" th:href="@{#}"></a>
 			</div>
 			<div class="main-center-content">
@@ -36,9 +35,9 @@
 							<div class="tweet-head-wrapper">
 								<div class="tweet-user-info">
 									<!-- <p th:text="">aaa</p> -->
-									<p>aaa</p>
-									<p>aaa</p>
-									<p>aaa</p>
+									<span class="tweet-handlename" th:text="${#strings.isEmpty(userInfo.usr.userName)} ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-username" th:text="'@' + ${userInfo.usr.userName}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-time" th:text="'・' + ${tweet_list.created}"></span>
 								</div>
 								<div class="tweet-menu">
 									<span class="fa fa-chevron-down"></span>
@@ -55,7 +54,7 @@
 				</th:block>
 			</div>
 			<div class="main-right-content">
-				right
+
 			</div>
 		</div>
 	</main>
