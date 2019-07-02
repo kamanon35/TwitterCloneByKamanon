@@ -72,7 +72,7 @@ public class UserInfoServiceComponent {
 	private List<Tweet> selectTweetByUserId(Long userId) {
 		TweetExample where = new TweetExample();
 		where.createCriteria().andUserIdEqualTo(userId);
-		return _tweetMapper.selectByExample(where);
+		return  _tweetMapper.selectByExample(where);
 	}
 
 	private List<Follow> selectFollowByUserId(Long userId){
