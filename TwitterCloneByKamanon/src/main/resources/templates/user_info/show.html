@@ -25,30 +25,33 @@
 					<a href="#">ツイートと返信</a>
 					<a href="#">メディア</a>
 				</nav>
-				<div class="main-center-content-tweet-wrapper">
-					<div class="tweet-icon">
-						<img class="icon" th:src="@{/image/user/coffee.png}" th:alt="ユーザーアイコン">
+				<!-- TweetリストLoop -->
+				<th:block th:each="tweet_list : ${userInfo.tweetList}" th:remove="tag">
+					<div class="main-center-content-tweet-wrapper">
+						<div class="tweet-user-icon">
+							<img class="icon" th:src="@{/image/user/coffee.png}" th:alt="ツイートユーザーアイコン">
+						</div>
+						<div class="tweet-wrapper">
+							<div class="tweet-head-wrapper">
+								<div class="tweet-user-info">
+									<!-- <p th:text="">aaa</p> -->
+									<p>aaa</p>
+									<p>aaa</p>
+									<p>aaa</p>
+								</div>
+								<div class="tweet-menu">
+									<span class="fa fa-chevron-down"></span>
+								</div>
+							</div>
+							<div class="tweet-text" th:text="${tweet_list.tweet}">XXXXXXXXXXXXXXXXXXXX</div>
+							<div class="tweet-action-list">
+								<p>ddd</p>
+								<p>ddd</p>
+								<p>ddd</p>
+							</div>
+						</div>
 					</div>
-					<div class="tweet-wrapper">
-						<div class="tweet-user-info">
-							<p>aaa</p>
-							<p>aaa</p>
-							<p>aaa</p>
-						</div>
-						<div class="tweet-menu">
-							<p>bbb</p>
-						</div>
-						<div class="tweet-text">
-							<p>ccc</p>
-						</div>
-						<div class="tweet-action-list">
-							<p>ddd</p>
-							<p>ddd</p>
-							<p>ddd</p>
-						</div>
-					</div>
-
-				</div>
+				</th:block>
 			</div>
 			<div class="main-right-content">
 				right
