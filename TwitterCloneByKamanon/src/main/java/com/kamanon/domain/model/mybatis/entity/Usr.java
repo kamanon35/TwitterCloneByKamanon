@@ -1,8 +1,7 @@
 package com.kamanon.domain.model.mybatis.entity;
 
-import java.util.Date;
-import java.time.LocalDateTime;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Usr {
 

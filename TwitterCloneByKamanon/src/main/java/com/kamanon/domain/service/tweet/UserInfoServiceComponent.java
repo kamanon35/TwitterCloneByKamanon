@@ -47,7 +47,7 @@ public class UserInfoServiceComponent {
 		UserInfo userInfo = new UserInfo();
 		
 		// usrテーブル情報を取得
-		userInfo.setUsr(this.selectUsrByUserName(userName));
+		userInfo.setUserInfo(this.selectUsrByUserName(userName));
 		
 		Long userId = userInfo.getUsr().getUserId();
 		

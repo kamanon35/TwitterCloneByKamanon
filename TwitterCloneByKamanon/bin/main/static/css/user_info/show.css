@@ -130,7 +130,7 @@
 }
 
 .tweet-menu {
-  padding: 3px 5px 0 0;
+  padding: 0 5px 0 0;
 }
 
 .tweet-handlename {
@@ -150,5 +150,20 @@
 
 .tweet-action-list {
   display: flex;
-  height: 100%;
+  margin-top: 10px;
+}
+
+.tweet-action-list button{
+  padding-right: 50px;
+}
+
+/* ツイートアクション ホバー設定 */
+.action-tweet:hover{
+  color: skyblue;
+}
+.action-retweet:hover{
+  color: lightgreen;
+}
+.action-like:hover{
+  color: red;
 }

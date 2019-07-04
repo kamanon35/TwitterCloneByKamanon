@@ -5,10 +5,11 @@
 -- Application  : A5:SQL Mk-2
 
 -- tweet
-drop table if exists tweet cascade;
+drop table if exists t_tweet cascade;
 
-create table tweet (
-  user_id BIGINT NOT NULL
+create table t_tweet (
+  tweet_id BIGSERIAL NOT NULL PRIMARY KEY
+  , user_id BIGINT NOT NULL
   , tweet TEXT not null
   , created TIMESTAMP
 ) ;
@@ -28,15 +29,23 @@ drop table if exists usr cascade;
 create table usr (
   user_id BIGSERIAL not null
   , user_name VARCHAR(255) not null unique
-  , password VARCHAR(255) not null
-  , handle_name VARCHAR(255)
-  , email_addr VARCHAR(255)
+  , password VARCHAR(255) not null unique
+  , handle_name VARCHAR(255) unique
+  , email_addr VARCHAR(255) unique
   , sex CHAR
   , birthday DATE
   , created TIMESTAMP not null
   , updated TIMESTAMP not null
   , CONSTRAINT user_id PRIMARY KEY(user_id)
 ) ;
+
+-- LIKE
+
+create table like_tweet(
+  user_id BIGINT NOT NULL
+  ,like_tweet_id BIGSERIAL NOT NULL
+  ,created TIMESTAMP
+);
 
 comment on table tweet is 'ツイート管理テーブル:ツイートを管理するテーブル。';
 comment on column tweet.user_id is 'ユーザーID';
