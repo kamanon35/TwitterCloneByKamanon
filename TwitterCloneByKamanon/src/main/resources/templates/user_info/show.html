@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="common/_layout :: page_head(${userInfo.usr.userName} + 'さんのページ', ~{::link})">
+<head th:replace="common/_layout :: page_head(${userInfo.userInfoEntity.userName} + 'さんのページ', ~{::link})">
 	<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
 </head>
 
@@ -16,8 +16,8 @@
 	<main id="main-content">
 		<div class="main-content-wrapper wrapper">
 			<div class="main-left-content">
-				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo.usr.userName)} ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}" th:href="@{#}"></a></h2>
-				<a class="main-left-content-user-name" th:text="'@' + ${userInfo.usr.userName}" th:href="@{#}"></a>
+				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo.userInfoEntity.userName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}" th:href="@{#}"></a></h2>
+				<a class="main-left-content-user-name" th:text="'@' + ${userInfo.userInfoEntity.userName}" th:href="@{#}"></a>
 			</div>
 			<div class="main-center-content">
 				<nav class="main-center-content-nav">
@@ -35,8 +35,8 @@
 							<div class="tweet-head-wrapper">
 								<div class="tweet-user-info">
 									<!-- <p th:text="">aaa</p> -->
-									<span class="tweet-handlename" th:text="${#strings.isEmpty(userInfo.usr.userName)} ? ${userInfo.usr.userName} : ${userInfo.usr.handleName}">XXXXXXXXXXXXXXXXXXXX</span>
-									<span class="tweet-username" th:text="'@' + ${userInfo.usr.userName}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-handlename" th:text="${#strings.isEmpty(userInfo.userInfoEntity.userName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-username" th:text="'@' + ${userInfo.userInfoEntity.userName}">XXXXXXXXXXXXXXXXXXXX</span>
 									<span class="tweet-time" th:text="'・' + ${tweet_list.created}"></span>
 								</div>
 								<div class="tweet-menu">

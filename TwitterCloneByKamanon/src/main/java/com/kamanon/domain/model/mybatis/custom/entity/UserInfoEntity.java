@@ -15,7 +15,7 @@ import lombok.Data;
 public class UserInfoEntity {
 
 	/*ユーザーID*/
-	private String userId;
+	private Long userId;
 	/*ユーザー名*/
 	private String userName;
 	/*ハンドルネーム*/

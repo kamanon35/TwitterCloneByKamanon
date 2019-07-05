@@ -9,15 +9,16 @@ import org.springframework.stereotype.Component;
 import com.kamanon.domain.model.entity.TwitterInfoSelectKey;
 import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
 import com.kamanon.domain.model.entity.UserInfo;
-import com.kamanon.domain.model.mybatis.entity.Follow;
-import com.kamanon.domain.model.mybatis.entity.FollowExample;
-import com.kamanon.domain.model.mybatis.entity.Tweet;
-import com.kamanon.domain.model.mybatis.entity.TweetExample;
-import com.kamanon.domain.model.mybatis.entity.Usr;
-import com.kamanon.domain.model.mybatis.entity.UsrExample;
-import com.kamanon.domain.model.mybatis.mapper.FollowMapper;
-import com.kamanon.domain.model.mybatis.mapper.TweetMapper;
-import com.kamanon.domain.model.mybatis.mapper.UsrMapper;
+import com.kamanon.domain.model.mybatis.custom.entity.UserInfoEntity;
+import com.kamanon.domain.model.mybatis.custom.mapper.UserInfoMapper;
+import com.kamanon.domain.model.mybatis.entity.TFollow;
+import com.kamanon.domain.model.mybatis.entity.TFollowExample;
+import com.kamanon.domain.model.mybatis.entity.TTweet;
+import com.kamanon.domain.model.mybatis.entity.TTweetExample;
+import com.kamanon.domain.model.mybatis.mapper.TFollowMapper;
+import com.kamanon.domain.model.mybatis.mapper.TLikeTweetMapper;
+import com.kamanon.domain.model.mybatis.mapper.TTweetMapper;
+import com.kamanon.domain.model.mybatis.mapper.TUsrMapper;
 
 
 /**
@@ -28,13 +29,16 @@ import com.kamanon.domain.model.mybatis.mapper.UsrMapper;
 public class UserInfoServiceComponent {
 	
 	@Autowired
-	UsrMapper _usrMapper;
+	TTweetMapper _tTweetMapper;
 	
 	@Autowired
-	TweetMapper _tweetMapper;
+	TFollowMapper _tFollowMapper;
 	
 	@Autowired
-	FollowMapper _followMapper;
+	TLikeTweetMapper _tLikeTweetMapper;
+	
+	@Autowired
+	UserInfoMapper _userInfoMapper;
 	
 	/**
 	 * userNameをキーに、ユーザー情報を取得する
@@ -45,17 +49,21 @@ public class UserInfoServiceComponent {
 		
 		String userName = key.getUserName();
 		UserInfo userInfo = new UserInfo();
+		UserInfoEntity userInfoEntity = new UserInfoEntity();
 		
-		// usrテーブル情報を取得
-		userInfo.setUserInfo(this.selectUsrByUserName(userName));
+		// ユーザー情報を取得
+		userInfoEntity = _userInfoMapper.selectUserInfoShow(userName);
 		
-		Long userId = userInfo.getUsr().getUserId();
+		Long userId = userInfoEntity.getUserId();
 		
-		// tweetテーブル情報を取得
-		userInfo.setTweetList(this.selectTweetByUserId(userId));
+		userInfo.setUserInfoEntity(userInfoEntity);
+		userInfo.setTweetActionCount(_userInfoMapper.countTweetAction(userId));
+		
 		
 		// followテーブル情報を取得
-		userInfo.setFollowList(this.selectFollowByUserId(userId));
+//		userInfo.setFollowList(this.selectFollowByUserId(userId));
+		
+		
 		
 		TwitterInfoSelectResult twitterInfoSelectResult = new TwitterInfoSelectResult();
 		twitterInfoSelectResult.setUserInfo(userInfo);
@@ -63,21 +71,15 @@ public class UserInfoServiceComponent {
 		return twitterInfoSelectResult;
 	}
 	
-	private Usr selectUsrByUserName(String userName) {
-		UsrExample where = new UsrExample();
-		where.createCriteria().andUserNameEqualTo(userName);
-		return _usrMapper.selectByExample(where).get(0);
-	}
-	
-	private List<Tweet> selectTweetByUserId(Long userId) {
-		TweetExample where = new TweetExample();
+	private List<TTweet> selectTweetByUserId(Long userId) {
+		TTweetExample where = new TTweetExample();
 		where.createCriteria().andUserIdEqualTo(userId);
-		return  _tweetMapper.selectByExample(where);
+		return  _tTweetMapper.selectByExample(where);
 	}
 
-	private List<Follow> selectFollowByUserId(Long userId){
-		FollowExample where = new FollowExample();
+	private List<TFollow> selectFollowByUserId(Long userId){
+		TFollowExample where = new TFollowExample();
 		where.createCriteria().andUserIdEqualTo(userId);
-		return _followMapper.selectByExample(where);
+		return _tFollowMapper.selectByExample(where);
 	}
 }

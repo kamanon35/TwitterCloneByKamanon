@@ -3,7 +3,7 @@ package com.kamanon.domain.model.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import com.kamanon.domain.model.mybatis.entity.Tweet;
+import com.kamanon.domain.model.mybatis.entity.TTweet;
 
 import lombok.Data;
 
@@ -18,6 +18,6 @@ public class TwitterInfoSelectResult implements Serializable{
 	UserInfo userInfo;
 	
 	// キーワードで検索したツイート一覧を保持
-	List<Tweet> selectResultTweetList;
+	List<TTweet> selectResultTweetList;
 	
 }

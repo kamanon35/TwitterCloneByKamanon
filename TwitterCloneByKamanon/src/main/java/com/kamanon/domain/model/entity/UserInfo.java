@@ -5,8 +5,8 @@ import java.util.List;
 
 import com.kamanon.domain.model.mybatis.custom.entity.TweetActionCount;
 import com.kamanon.domain.model.mybatis.custom.entity.UserInfoEntity;
-import com.kamanon.domain.model.mybatis.entity.Follow;
-import com.kamanon.domain.model.mybatis.entity.Tweet;
+import com.kamanon.domain.model.mybatis.entity.TFollow;
+import com.kamanon.domain.model.mybatis.entity.TTweet;
 
 import lombok.Data;
 
@@ -24,13 +24,13 @@ public class UserInfo implements Serializable {
 	private TweetActionCount tweetActionCount;
 
 	/* ツイートリスト */
-	private List<Tweet> tweetList;
+	private List<TTweet> tweetList;
 
 	/* フォローリスト */
-	private List<Follow> followList;
+	private List<TFollow> followList;
 
 	/* フォロワーリスト */
-	private List<Follow> followerList;
+	private List<TFollow> followerList;
 
 	/* いいねリスト */
 }
