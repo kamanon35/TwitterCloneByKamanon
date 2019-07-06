@@ -3,7 +3,7 @@
 
 <head th:replace="common/_layout :: page_head(${userInfo.userInfoEntity.userName} + 'さんのページ', ~{::link})">
 	<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
-</head>
+</head>.
 
 <body>
 	<!-- ページヘッダー -->
@@ -16,7 +16,7 @@
 	<main id="main-content">
 		<div class="main-content-wrapper wrapper">
 			<div class="main-left-content">
-				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo.userInfoEntity.userName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}" th:href="@{#}"></a></h2>
+				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo.userInfoEntity.handleName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}" th:href="@{#}"></a></h2>
 				<a class="main-left-content-user-name" th:text="'@' + ${userInfo.userInfoEntity.userName}" th:href="@{#}"></a>
 			</div>
 			<div class="main-center-content">
@@ -26,7 +26,7 @@
 					<a href="#">メディア</a>
 				</nav>
 				<!-- TweetリストLoop -->
-				<th:block th:each="tweet_list : ${userInfo.tweetList}" th:remove="tag">
+				<th:block th:each="tweet_info_th : ${userInfo.tweetList}" th:remove="tag">
 					<div class="main-center-content-tweet-wrapper">
 						<div class="tweet-user-icon">
 							<img class="icon" th:src="@{/image/user/coffee.png}" th:alt="ツイートユーザーアイコン">
@@ -34,16 +34,15 @@
 						<div class="tweet-wrapper">
 							<div class="tweet-head-wrapper">
 								<div class="tweet-user-info">
-									<!-- <p th:text="">aaa</p> -->
-									<span class="tweet-handlename" th:text="${#strings.isEmpty(userInfo.userInfoEntity.userName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-handlename" th:text="${#strings.isEmpty(userInfo.userInfoEntity.handleName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}">XXXXXXXXXXXXXXXXXXXX</span>
 									<span class="tweet-username" th:text="'@' + ${userInfo.userInfoEntity.userName}">XXXXXXXXXXXXXXXXXXXX</span>
-									<span class="tweet-time" th:text="'・' + ${tweet_list.created}"></span>
+									<span class="tweet-time" th:text="'・' + ${tweet_info_th.created}"></span>
 								</div>
 								<div class="tweet-menu">
 									<span class="fa fa-chevron-down"></span>
 								</div>
 							</div>
-							<div class="tweet-text" th:text="${tweet_list.tweet}">XXXXXXXXXXXXXXXXXXXX</div>
+							<div class="tweet-text" th:text="${tweet_info_th.tweet}">XXXXXXXXXXXXXXXXXXXX</div>
 							<div class="tweet-action-list">
 								<button type="button" class="comment-button" name="comment-button"><span class="fa fa-comment action-tweet"></span></button>
 								<button type="button" class="retweet-button" name="retweet-button"><span class="fa fa-retweet action-retweet"></span></button>

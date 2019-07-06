@@ -21,13 +21,13 @@ public interface UserInfoMapper {
 	 * likeCount
 	 * */
 	@Lang(FreeMarkerLanguageDriver.class)
-	@Select("user_info/selectUserInfoShow.ftl")
-	UserInfoEntity selectUserInfoShow(@Param("userName") String userName);
+	@Select("selectUserInfoShow.ftl")
+	UserInfoEntity selectUserInfoShow(@Param("n") String userName);
 	
 	/*
 	 * ツイートアクション数を取得
 	 * */
 	@Lang(FreeMarkerLanguageDriver.class)
-	@Select("user_info/countTweetAction.ftl")
+	@Select("countTweetAction.ftl")
 	TweetActionCount countTweetAction(@Param("userId") Long userId);
 }

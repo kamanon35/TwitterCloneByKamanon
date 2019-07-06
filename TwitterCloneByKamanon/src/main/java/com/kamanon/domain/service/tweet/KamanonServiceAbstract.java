@@ -23,6 +23,7 @@ public abstract class KamanonServiceAbstract implements KamanonServiceBase {
 			model.addAttribute("error", k.getMessage());
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			model.addAttribute("error", "想定外の例外が発生しました。"); // TODO コードべた書きはいかがなものか
 			model.addAttribute("error", e.getMessage());
 		}

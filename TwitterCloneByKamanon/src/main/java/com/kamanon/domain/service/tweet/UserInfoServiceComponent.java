@@ -1,7 +1,5 @@
 package com.kamanon.domain.service.tweet;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -9,16 +7,11 @@ import org.springframework.stereotype.Component;
 import com.kamanon.domain.model.entity.TwitterInfoSelectKey;
 import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
 import com.kamanon.domain.model.entity.UserInfo;
+import com.kamanon.domain.model.mybatis.custom.entity.TweetActionCount;
 import com.kamanon.domain.model.mybatis.custom.entity.UserInfoEntity;
 import com.kamanon.domain.model.mybatis.custom.mapper.UserInfoMapper;
-import com.kamanon.domain.model.mybatis.entity.TFollow;
-import com.kamanon.domain.model.mybatis.entity.TFollowExample;
-import com.kamanon.domain.model.mybatis.entity.TTweet;
-import com.kamanon.domain.model.mybatis.entity.TTweetExample;
 import com.kamanon.domain.model.mybatis.mapper.TFollowMapper;
-import com.kamanon.domain.model.mybatis.mapper.TLikeTweetMapper;
 import com.kamanon.domain.model.mybatis.mapper.TTweetMapper;
-import com.kamanon.domain.model.mybatis.mapper.TUsrMapper;
 
 
 /**
@@ -33,9 +26,6 @@ public class UserInfoServiceComponent {
 	
 	@Autowired
 	TFollowMapper _tFollowMapper;
-	
-	@Autowired
-	TLikeTweetMapper _tLikeTweetMapper;
 	
 	@Autowired
 	UserInfoMapper _userInfoMapper;
@@ -56,30 +46,16 @@ public class UserInfoServiceComponent {
 		
 		Long userId = userInfoEntity.getUserId();
 		
+		// ツイートアクション数を取得
+		TweetActionCount tweetActionCount = _userInfoMapper.countTweetAction(userId);
+		userInfo.setTweetActionCount(tweetActionCount);
+		
 		userInfo.setUserInfoEntity(userInfoEntity);
 		userInfo.setTweetActionCount(_userInfoMapper.countTweetAction(userId));
-		
-		
-		// followテーブル情報を取得
-//		userInfo.setFollowList(this.selectFollowByUserId(userId));
-		
-		
 		
 		TwitterInfoSelectResult twitterInfoSelectResult = new TwitterInfoSelectResult();
 		twitterInfoSelectResult.setUserInfo(userInfo);
 		
 		return twitterInfoSelectResult;
-	}
-	
-	private List<TTweet> selectTweetByUserId(Long userId) {
-		TTweetExample where = new TTweetExample();
-		where.createCriteria().andUserIdEqualTo(userId);
-		return  _tTweetMapper.selectByExample(where);
-	}
-
-	private List<TFollow> selectFollowByUserId(Long userId){
-		TFollowExample where = new TFollowExample();
-		where.createCriteria().andUserIdEqualTo(userId);
-		return _tFollowMapper.selectByExample(where);
 	}
 }

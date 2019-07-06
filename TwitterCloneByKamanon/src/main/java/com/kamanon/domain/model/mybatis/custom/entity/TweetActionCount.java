@@ -10,6 +10,8 @@ import lombok.Data;
 @Data
 public class TweetActionCount {
 
+	/*ツイート数*/
+	private Integer tweetCount;
 	/*フォロー数*/
 	private Integer followCount;
 	/*フォロワー数*/

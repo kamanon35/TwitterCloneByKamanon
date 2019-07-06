@@ -11,6 +11,8 @@ INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, u
 VALUES (1, 6, '0', '1', current_timestamp, current_timestamp);
 INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
 VALUES (1, 4, '1', '0', current_timestamp, current_timestamp);
+INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
+VALUES (1, 6, '0', '1', current_timestamp, current_timestamp);
 
 INSERT INTO t_tweet (user_id, tweet, created)
 VALUES (1, '鈴木1ツイート目', current_timestamp);
