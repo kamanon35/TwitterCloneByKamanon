@@ -17,8 +17,6 @@
 	<!--/* ファビコンの設定 */-->
 	<link rel="icon" type="image/ping" th:href="@{/image/header/bird_aoitori_bluebird.png}">
 	<!--/* js読み込み */-->
-	<!-- <script th:src="@{/js/jquery-3.4.1.min.js}"></script> -->
-	<!-- <script src="js/jquery-3.4.1.min.js"></script> -->
 	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
 	<!--/* viewportの設定 */-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,15 +66,19 @@
 							<ul class="main-nav-items">
 								<li class="main-nav-item  main-nav-tweets">
 									<p>ツイート</p>
-									<p class="main-nav-item-count">123</p>
+									<span class="main-nav-item-count" th:text="${userInfo.tweetActionCount.tweetCount}">XXXXXXXXXXXXXXXXXXXX</span>
 								</li>
 								<li class="main-nav-item main-nav-follows">
 									<p>フォロー</p>
-									<p class="main-nav-item-count">456</p>
+									<span class="main-nav-item-count" th:text="${userInfo.tweetActionCount.followCount}">XXXXXXXXXXXXXXXXXXXX</span>
 								</li>
-								<li class="main-nav-item main-nav-followers">
+								<li class="main-nav-item main-nav-follower">
 									<p>フォロワー</p>
-									<p class="main-nav-item-count">789</p>
+									<span class="main-nav-item-count" th:text="${userInfo.tweetActionCount.followerCount}">XXXXXXXXXXXXXXXXXXXX</span>
+								</li>
+								<li class="main-nav-item main-nav-like">
+									<p>いいね</p>
+									<span class="main-nav-item-count" th:text="${userInfo.tweetActionCount.likeCount}">XXXXXXXXXXXXXXXXXXXX</span>
 								</li>
 							</ul>
 							<div class="btn main-nav-profile-edit-btn">

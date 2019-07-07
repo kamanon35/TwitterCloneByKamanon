@@ -183,15 +183,10 @@ nav {
   z-index: 9;
 }
 
-.main-nav-items-wrapper {
-  width: 100%;
-  background: green;
-}
-
 .main-nav-items {
   display: flex;
   position: relative;
-  right: 9rem;
+  right: 6rem;
 	height: 100%;
 	cursor: pointer;
 }

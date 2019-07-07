@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import lombok.Data;
 
 /**
- * DBより取得したユーザー情報を保持
+ * DBから取得したユーザー情報を保持
  * 
  * @author kamanon
  *

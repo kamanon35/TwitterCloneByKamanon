@@ -8,28 +8,28 @@ VALUES ('takizawa', 'ptakizawa', 'takky', 'taki@gmaaail.com', '0', DATE'2001-02-
 INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
 VALUES (1, 3, '1', '1', current_timestamp, current_timestamp);
 INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
-VALUES (1, 6, '0', '1', current_timestamp, current_timestamp);
+VALUES (1, 5, '0', '1', current_timestamp, current_timestamp);
 INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
 VALUES (1, 4, '1', '0', current_timestamp, current_timestamp);
 INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
-VALUES (1, 6, '0', '1', current_timestamp, current_timestamp);
+VALUES (1, 6, '1', '1', current_timestamp, current_timestamp);
 
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (1, '鈴木1ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (1, '鈴木2ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (2, '内村1ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (2, '内村2ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (3, '滝沢1ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (3, '滝沢2ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (1, '鈴木3ツイート目', current_timestamp);
-INSERT INTO t_tweet (user_id, tweet, created)
-VALUES (1, '鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (1, '鈴木1ツイート目', '0', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (1, '鈴木2ツイート目', '0', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (2, '内村1ツイート目', '1', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (2, '内村2ツイート目', '1', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (3, '滝沢1ツイート目', '0', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (3, '滝沢2ツイート目', '1', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (1, '鈴木3ツイート目', '0', current_timestamp);
+INSERT INTO t_tweet (user_id, tweet, retweet_flg, created)
+VALUES (1, '鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目鈴木4ツイート目', '1', current_timestamp);
 
 INSERT INTO t_follow (user_id, follow_user_id, created)
 VALUES (1, 2, current_timestamp);

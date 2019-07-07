@@ -11,6 +11,7 @@ create table t_tweet (
   tweet_id BIGSERIAL NOT NULL PRIMARY KEY
   , user_id BIGINT NOT NULL
   , tweet TEXT NOT NULL
+  , retweet_flg CHAR NOT NULL
   , created TIMESTAMP
 ) ;
 
@@ -55,6 +56,7 @@ comment on table t_tweet is 'ツイート:ツイートを格納';
 comment on column t_tweet.tweet_id is 'ツイートID';
 comment on column t_tweet.user_id is 'ユーザーID';
 comment on column t_tweet.tweet is 'ツイート内容';
+comment on column t_tweet.retweet_flg is 'リツイートフラグ';
 comment on column t_tweet.created is '作成日時';
 
 comment on table t_tweet_action is 'ツイートアクション:ツイートに対するアクションを格納';

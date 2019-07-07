@@ -3,7 +3,7 @@ package com.kamanon.domain.model.mybatis.custom.entity;
 import lombok.Data;
 
 /**
- * Tweetアクション数を保持
+ * DBから取得したTweetアクション数を保持
  * @author kamanon
  *
  */

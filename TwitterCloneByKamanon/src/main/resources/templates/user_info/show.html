@@ -3,7 +3,7 @@
 
 <head th:replace="common/_layout :: page_head(${userInfo.userInfoEntity.userName} + 'さんのページ', ~{::link})">
 	<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
-</head>.
+</head>
 
 <body>
 	<!-- ページヘッダー -->
@@ -26,7 +26,7 @@
 					<a href="#">メディア</a>
 				</nav>
 				<!-- TweetリストLoop -->
-				<th:block th:each="tweet_info_th : ${userInfo.tweetList}" th:remove="tag">
+				<th:block th:each="tweet_info_th : ${userInfo.tweetInfoEntityList}" th:remove="tag">
 					<div class="main-center-content-tweet-wrapper">
 						<div class="tweet-user-icon">
 							<img class="icon" th:src="@{/image/user/coffee.png}" th:alt="ツイートユーザーアイコン">

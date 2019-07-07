@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kamanon.domain.model.mybatis.custom.mapper.TweetInfoMapper">
+	<select id="selectTweetInfoShow"
+		resultType="com.kamanon.domain.model.mybatis.custom.entity.TweetInfoEntity">
+		<![CDATA[
+SELECT
+  t.tweet_id AS tweetId
+  , t.user_id AS userID
+  , t.tweet AS tweet
+  , t.retweet_flg AS retweetFlg
+  , t.created AS created 
+FROM
+  t_tweet AS t 
+WHERE
+  t.user_id = #{userId} 
+  OR t.tweet_id IN ( 
+    SELECT
+      a.tweet_id 
+    FROM
+      t_tweet_action a 
+    WHERE
+      a.user_id = #{userId} 
+      AND retweet_flg = #{retweetFlg}
+  )
+ORDER BY created DESC, tweetId DESC
+		]]>
+	</select>
+</mapper>

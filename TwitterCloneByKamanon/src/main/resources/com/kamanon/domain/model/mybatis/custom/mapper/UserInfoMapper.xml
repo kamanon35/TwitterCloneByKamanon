@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kamanon.domain.model.mybatis.custom.mapper.UserInfoMapper">
+	<select id="selectUserInfoShow"
+		resultType="com.kamanon.domain.model.mybatis.custom.entity.UserInfoEntity">
+		<![CDATA[
+		SELECT user_id AS userId, user_name AS userName, handle_name
+		AS handleName, birthday AS birthday
+		FROM t_usr
+		WHERE
+		user_name = #{userName}
+		]]>
+	</select>
+	<select id="countTweetAction"
+		resultType="com.kamanon.domain.model.mybatis.custom.entity.TweetActionCount">
+		<![CDATA[
+	SELECT
+	  * 
+	FROM
+ 	 ( 
+    SELECT
+      count(user_id = #{userId} or null) AS tweetCount 
+    FROM
+      t_tweet
+	  ) AS tweet_count
+	  , ( 
+    SELECT
+      count(user_id = #{userId} or null) AS followCount
+      , count(follow_user_id = #{userId} or null) AS followerCount 
+    FROM
+      t_follow AS f
+  ) AS t_follow_and_follower
+  , ( 
+    SELECT
+      count(like_flg = #{likeFlg} or null) AS likeCount 
+    FROM
+      t_tweet_action AS t
+  ) AS t_like
+	
+		]]>
+	</select>
+</mapper>
