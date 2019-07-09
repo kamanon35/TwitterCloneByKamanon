@@ -25,8 +25,8 @@ img {
   max-width: 100%;
 }
 
-.icon{
-    border-radius: 50%;
+.icon {
+  border-radius: 50%;
 }
 
 /* font-awesome */
@@ -61,7 +61,8 @@ img {
   padding: 0 10px 0;
   transition: all 0.2s;
 }
-.header-left-nav li span{
+
+.header-left-nav li span {
   transition: all 0.2s;
 }
 
@@ -70,7 +71,7 @@ img {
   color: lightgreen;
 }
 
-.header-left-nav li:hover span{
+.header-left-nav li:hover span {
   color: lightgreen;
 }
 
@@ -108,7 +109,7 @@ nav {
   align-items: center;
 }
 
-.header-right-nav li{
+.header-right-nav li {
   display: flex;
 }
 
@@ -187,38 +188,38 @@ nav {
   display: flex;
   position: relative;
   right: 6rem;
-	height: 100%;
-	cursor: pointer;
+  height: 100%;
+  cursor: pointer;
 }
 
 .main-nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-	position: relative;
-	top: 0.25rem;
-	height: 100%;
+  position: relative;
+  top: 0.25rem;
+  height: 100%;
   color: #555;
   padding-right: 40px;
-	font-size: 0.8rem;
-	line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
-.main-nav-item p{
-		width: 100%;
-		text-align: center;
+.main-nav-item p {
+  width: 100%;
+  text-align: center;
 }
 
 .main-nav-item-count {
   font-size: 1rem;
-	width: 100%;
-	text-align: center;
-	font-weight: bold;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
 }
 
-.main-nav-item-count:hover{
-	border-bottom: 2px lightgreen solid;
-	color: lightgreen;
+.main-nav-item-count:hover {
+  border-bottom: 2px lightgreen solid;
+  color: lightgreen;
 }
 
 .main-nav-profile-edit-btn {
@@ -234,4 +235,46 @@ nav {
   display: block;
   color: #555;
   font-size: 1rem;
+}
+
+/* tweetモーダル */
+.header-tweet-modal-wrapper {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.modal {
+  border-radius: 10px;
+}
+
+.tweet-modal {
+  display: flex;
+  align-items: column;
+  position: relative;
+  top: 10%;
+  background-color: #e6ecf0;
+  height: auto;
+  width: 80vh;
+}
+
+.tweet-modal-top h2 {
+  position: relative;
+  top: 0;
+  left: 100%;
+  padding-top: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
 }

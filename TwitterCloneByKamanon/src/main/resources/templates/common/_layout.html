@@ -49,7 +49,7 @@
 							<img class="icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
 						</li>
 						<li class="header-nav-tweet-box">
-							<a class="btn" id="header-nav-tweet" th:href="@{#}">ツイート</a>
+							<a class="btn" id="header-nav-tweet-modal-show" th:href="@{#}">ツイート</a>
 						</li>
 					</ul>
 				</form>
@@ -87,6 +87,22 @@
 						</div> <!-- /.main-nav-wrapper wrapper -->
 					</div> <!-- /.main-nav-bar -->
 				</div> <!-- /main-nav-bar-fragment -->
+
+				<div th:fragment="header-tweet-modal-fragment" th:remove="tag">
+					<div id="header-nav-tweet-modal" class="header-tweet-modal-wrapper">
+						<div class="tweet-modal modal">
+							<div class="tweet-modal-top">
+								<h2>ツイートする</h2>
+								<span class="fa fa-times close-button"></span>
+							</div>
+							<div class="tweet-modal-center">
+
+							</div>
+							<div class="tweet-modal-bottom">
+							</div>
+						</div>
+					</div> <!-- /.header-tweet-modal-wrapper -->
+				</div> <!-- /header-tweet-modal-fragment -->
 
 				<!-- script読み込み -->
 				<div th:fragment="load-scripts(scripts)" th:remove="tag">
