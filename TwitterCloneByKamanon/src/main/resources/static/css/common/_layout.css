@@ -45,10 +45,27 @@ img {
   /* padding: 0 4%; */
 }
 
+.page-header-container {
+  height: 50px;
+  width: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
 .page-header {
   display: flex;
   justify-content: space-between;
   height: 50px;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 
 /* ヘッダー */
@@ -149,7 +166,7 @@ nav {
   line-height: 1;
 }
 
-#header-nav-tweet {
+#header-nav-tweet-modal-show {
   display: inline-block;
   background: skyblue;
   color: white;
@@ -238,40 +255,52 @@ nav {
 }
 
 /* tweetモーダル */
-.header-tweet-modal-wrapper {
-  display: flex;
-  justify-content: center;
+#tweet-nav-modal-container {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header-tweet-modal-wrapper {
+  position: relative;
+  top: 50%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
   z-index: 100;
 }
 
-.modal{
+.modal {
   border-radius: 10px;
 }
 
-.tweet-modal{
+.tweet-modal {
+  position: absolute;
+  top: 100px;
   display: flex;
-  align-items: column;
-  position: relative;
-  top: 10%;
-  background-color: #e6ecf0;
-  height: auto;
+  flex-direction: column;
+  /* background-color: #e6ecf0; */
+  background-color: red;
   width: 80vh;
+  height: 10vh;
+  overflow: visible;
 }
 
-.tweet-modal-top h2{
-  position: relative;
-  top: 0;
-  left: 100%;
-  padding-top: 10px;
+.tweet-modal-top {
+  display: flex;
+  justify-content: center;
 }
 
-.close-button {
+.tweet-modal-top h2 {
+  display: flex;
+}
+
+.close-modal {
   position: absolute;
   top: 12px;
   right: 12px;

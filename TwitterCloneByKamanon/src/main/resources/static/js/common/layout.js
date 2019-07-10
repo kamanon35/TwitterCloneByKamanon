@@ -4,7 +4,10 @@
 $(function() {
 
 	$('#header-nav-tweet-modal-show').click(function(){
-		$('#header-nav-tweet-modal').fadeIn();
+		$('#tweet-nav-modal-container').fadeIn();
 	});
 
+	$('.close-modal').click(function(){
+		$('#tweet-nav-modal-container').fadeOut();
+	});
 });

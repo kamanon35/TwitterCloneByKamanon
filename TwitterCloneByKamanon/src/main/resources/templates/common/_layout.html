@@ -30,7 +30,9 @@
 <body>
 	<!--*/ ヘッダー */-->
 	<header th:fragment="page_header" th:remove="tag">
-		<div class="page-header wrapper">
+		<div class="page-header-container">
+			<div class="page-header wrapper">
+
 			<nav>
 				<ul class="header-left-nav">
 					<li><span class="fa fa-home"></span>ホーム</li>
@@ -54,6 +56,7 @@
 					</ul>
 				</form>
 			</nav>
+		</div>
 		</div>
 	</header>
 
@@ -88,20 +91,23 @@
 					</div> <!-- /.main-nav-bar -->
 				</div> <!-- /main-nav-bar-fragment -->
 
+				<!-- ヘッダーTweetモーダル -->
 				<div th:fragment="header-tweet-modal-fragment" th:remove="tag">
-					<div id="header-nav-tweet-modal" class="header-tweet-modal-wrapper">
-						<div class="tweet-modal modal">
-							<div class="tweet-modal-top">
-								<h2>ツイートする</h2>
-								<span class="fa fa-times close-button"></span>
-							</div>
-							<div class="tweet-modal-center">
+					<div id="tweet-nav-modal-container">
+						<div id="header-nav-tweet-modal" class="header-tweet-modal-wrapper">
+							<div class="tweet-modal modal">
+								<div class="tweet-modal-top">
+									<h2>ツイートする</h2>
+									<span class="fa fa-times close-modal"></span>
+								</div>
+								<div class="tweet-modal-center">
 
+								</div>
+								<div class="tweet-modal-bottom">
+								</div>
 							</div>
-							<div class="tweet-modal-bottom">
-							</div>
-						</div>
-					</div> <!-- /.header-tweet-modal-wrapper -->
+						</div> <!-- /.header-tweet-modal-wrapper -->
+					</div> <!-- /.tweet-nav-container -->
 				</div> <!-- /header-tweet-modal-fragment -->
 
 				<!-- script読み込み -->
