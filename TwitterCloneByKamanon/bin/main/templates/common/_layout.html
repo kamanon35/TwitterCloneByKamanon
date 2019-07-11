@@ -33,30 +33,30 @@
 		<div class="page-header-container">
 			<div class="page-header wrapper">
 
-			<nav>
-				<ul class="header-left-nav">
-					<li><span class="fa fa-home"></span>ホーム</li>
-					<li><span class="fa fa-bell"></span>通知</li>
-					<li><span class="fa fa-envelope"></span>メッセージ</li>
-			</nav>
-			<img class="bird-icon header-center-logo" th:src="@{/image/header/bird_aoitori_bluebird.png}" th:alt="ヘッダーアプリアイコン">
-			<nav>
-				<form id="header-form" action="index.html" method="post">
-					<ul class="header-right-nav">
-						<li class="search-key">
-							<input type="text" name="search-key" maxlength="50" placeholder="キーワード検索">
-							<button id="header-search-button" type="submit"><span class="fa fa-search"></span></button>
-						</li>
-						<li>
-							<img class="icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
-						</li>
-						<li class="header-nav-tweet-box">
-							<a class="btn" id="header-nav-tweet-modal-show" th:href="@{#}">ツイート</a>
-						</li>
-					</ul>
-				</form>
-			</nav>
-		</div>
+				<nav>
+					<ul class="header-left-nav">
+						<li><span class="fa fa-home"></span>ホーム</li>
+						<li><span class="fa fa-bell"></span>通知</li>
+						<li><span class="fa fa-envelope"></span>メッセージ</li>
+				</nav>
+				<img class="bird-icon header-center-logo" th:src="@{/image/header/bird_aoitori_bluebird.png}" th:alt="ヘッダーアプリアイコン">
+				<nav>
+					<form id="header-form" action="index.html" method="post">
+						<ul class="header-right-nav">
+							<li class="search-key">
+								<input type="text" name="search-key" maxlength="50" placeholder="キーワード検索">
+								<button id="header-search-button" type="submit"><span class="fa fa-search"></span></button>
+							</li>
+							<li>
+								<img class="icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
+							</li>
+							<li class="header-nav-tweet-box">
+								<button class="btn" id="header-nav-tweet-modal-show" type="button">ツイート</button>
+							</li>
+						</ul>
+					</form>
+				</nav>
+			</div>
 		</div>
 	</header>
 
@@ -86,42 +86,46 @@
 							</ul>
 							<div class="btn main-nav-profile-edit-btn">
 								<a th:href="@{#}">プロフィールを編集</a>
+			</div>
+		</div> <!-- /.main-nav-wrapper wrapper -->
+	</div> <!-- /.main-nav-bar -->
+	</div> <!-- /main-nav-bar-fragment -->
+
+	<!-- ヘッダーTweetモーダル -->
+	<div th:fragment="header-tweet-modal-fragment" th:remove="tag">
+		<div id="tweet-nav-modal-container">
+			<div class="header-tweet-modal-wrapper">
+				<div class="tweet-modal modal">
+					<div class="tweet-modal-top">
+						<h2>ツイートする</h2>
+						<span class="fa fa-times close-modal"></span>
+					</div>
+					<div class="tweet-modal-main-wrapper">
+						<form th:action="@{/index.html}" method="post">
+							<div class="tweet-modal-main">
+								<img class="icon" th:src="@{/image/user/coffee.png}" alt="ツイートモーダルユーザーアイコン">
+								<textarea name="tweet-modal-text" rows="3" cols="30"></textarea>
 							</div>
-						</div> <!-- /.main-nav-wrapper wrapper -->
-					</div> <!-- /.main-nav-bar -->
-				</div> <!-- /main-nav-bar-fragment -->
-
-				<!-- ヘッダーTweetモーダル -->
-				<div th:fragment="header-tweet-modal-fragment" th:remove="tag">
-					<div id="tweet-nav-modal-container">
-						<div id="header-nav-tweet-modal" class="header-tweet-modal-wrapper">
-							<div class="tweet-modal modal">
-								<div class="tweet-modal-top">
-									<h2>ツイートする</h2>
-									<span class="fa fa-times close-modal"></span>
-								</div>
-								<div class="tweet-modal-center">
-
-								</div>
-								<div class="tweet-modal-bottom">
-								</div>
-							</div>
-						</div> <!-- /.header-tweet-modal-wrapper -->
-					</div> <!-- /.tweet-nav-container -->
-				</div> <!-- /header-tweet-modal-fragment -->
-
-				<!-- script読み込み -->
-				<div th:fragment="load-scripts(scripts)" th:remove="tag">
-					<div class="load-scrips-main">
-
-						<!--/* 共通スクリプト設定 */-->
-
-						<script type="text/javascript" th:src="@{/js/common/layout.js}"></script>
-
-						<!--/* 画面固有スクリプト設定 */-->
-				    <th:block th:replace="${scripts}" />
+							<input class="tweet-modal-send" type="submit" name="add_tweet" value="ツイート">
+						</form>
 					</div>
 				</div>
+			</div> <!-- /.header-tweet-modal-wrapper -->
+		</div> <!-- /.tweet-nav-container -->
+	</div> <!-- /header-tweet-modal-fragment -->
+
+	<!-- script読み込み -->
+	<div th:fragment="load-scripts(scripts)" th:remove="tag">
+		<div class="load-scrips-main">
+
+			<!--/* 共通スクリプト設定 */-->
+
+			<script type="text/javascript" th:src="@{/js/common/layout.js}"></script>
+
+			<!--/* 画面固有スクリプト設定 */-->
+			<th:block th:replace="${scripts}" />
+		</div>
+	</div>
 
 
 </body>

@@ -267,44 +267,68 @@ nav {
 }
 
 .header-tweet-modal-wrapper {
-  position: absolute;
-top: 20%;
-left: 34%;
-background-color: #e6ecf0;
-padding: 20px 0 40px;
-width: 450px;
-height: auto;
-  /* position: relative;
-  top: 50%;
-  left: 25%;
   display: flex;
   justify-content: center;
-  z-index: 100; */
-}
-
-.modal {
-  border-radius: 10px;
+  height: 100%;
+  z-index: 100;
 }
 
 .tweet-modal {
   position: absolute;
-  top: 100px;
+  top: 5%;
   display: flex;
   flex-direction: column;
-  /* background-color: #e6ecf0; */
-  background-color: red;
+  background-color: white;
   width: 80vh;
-  height: 10vh;
-  overflow: visible;
+  height: auto;
 }
 
 .tweet-modal-top {
   display: flex;
   justify-content: center;
+  padding: 10px 0;
+  border-bottom: 1px rgba(144,238,144, 0.8) solid;
 }
 
-.tweet-modal-top h2 {
+.tweet-modal-main-wrapper {
+  background: rgba(144,238,144, 0.2);
+  height: auto;
+  padding: 20px 15px;
+}
+
+.tweet-modal-main{
   display: flex;
+}
+
+.tweet-modal-main img{
+  height: 40px;
+  width: 40px;
+}
+
+.tweet-modal-main textarea{
+  width: 95%;
+  background: white;
+  border-radius: 10px;
+  border: 1px rgba(144,238,144, 0.8) solid;
+  margin-left: 10px;
+  min-height: 100px;
+  max-height: 500px;
+  padding: 5px;
+}
+
+.tweet-modal-main textarea:focus {
+  border: 2px lightgreen solid;
+  outline: 0;
+}
+
+.tweet-modal-send{
+  background: skyblue;
+  margin: 10px;
+  height: 50px;
+}
+
+.modal {
+  border-radius: 10px;
 }
 
 .close-modal {
