@@ -314,6 +314,7 @@ nav {
   min-height: 100px;
   max-height: 500px;
   padding: 5px;
+  resize: none;
 }
 
 .tweet-modal-main textarea:focus {
@@ -321,10 +322,17 @@ nav {
   outline: 0;
 }
 
+.tweet-modal-bottom{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+}
+
 .tweet-modal-send{
   background: skyblue;
-  margin: 10px;
-  height: 50px;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
 }
 
 .modal {

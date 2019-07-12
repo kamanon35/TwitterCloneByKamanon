@@ -87,11 +87,11 @@
 							<div class="btn main-nav-profile-edit-btn">
 								<a th:href="@{#}">プロフィールを編集</a>
 			</div>
-		</div> <!-- /.main-nav-wrapper wrapper -->
-	</div> <!-- /.main-nav-bar -->
-	</div> <!-- /main-nav-bar-fragment -->
+		</div> <!--/* /.main-nav-wrapper wrapper */-->
+	</div> <!--/* /.main-nav-bar */-->
+</div> <!--/* /main-nav-bar-fragment */-->
 
-	<!-- ヘッダーTweetモーダル -->
+	<!--/* ヘッダーTweetモーダル */-->
 	<div th:fragment="header-tweet-modal-fragment" th:remove="tag">
 		<div id="tweet-nav-modal-container">
 			<div class="header-tweet-modal-wrapper">
@@ -104,17 +104,19 @@
 						<form th:action="@{/index.html}" method="post">
 							<div class="tweet-modal-main">
 								<img class="icon" th:src="@{/image/user/coffee.png}" alt="ツイートモーダルユーザーアイコン">
-								<textarea name="tweet-modal-text" rows="3" cols="30"></textarea>
+								<textarea name="tweet-modal-text" rows="3"></textarea>
 							</div>
-							<input class="tweet-modal-send" type="submit" name="add_tweet" value="ツイート">
+							<div class="tweet-modal-bottom">
+									<input class="btn tweet-modal-send" type="submit" name="add_tweet" value="ツイート">
+							</div>
 						</form>
 					</div>
 				</div>
-			</div> <!-- /.header-tweet-modal-wrapper -->
-		</div> <!-- /.tweet-nav-container -->
-	</div> <!-- /header-tweet-modal-fragment -->
+			</div> <!--/* /.header-tweet-modal-wrapper */-->
+		</div> <!--/* /.tweet-nav-container */-->
+	</div> <!--/* /header-tweet-modal-fragment */-->
 
-	<!-- script読み込み -->
+	<!--/* script読み込み */-->
 	<div th:fragment="load-scripts(scripts)" th:remove="tag">
 		<div class="load-scrips-main">
 

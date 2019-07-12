@@ -14,14 +14,14 @@
 --------------- */
 #main-content {
   background-color: #e6ecf0;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
 }
 
 .main-content-wrapper {
   display: flex;
   justify-content: space-between;
-  height: 100%;
+  height: auto;
 }
 
 .main-left-content {
@@ -57,18 +57,18 @@
   flex-grow: 1.3;
   flex-direction: column;
   background: white;
-  height: 100%;
+  height: auto;
   width: 20rem;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .main-center-content-nav {
   display: flex;
   align-items: center;
   border-bottom: 1px rgba(204, 204, 204, 0.6) solid;
-  padding-left: 20px;
+  padding: 25px 0 25px 20px;
   height: 40px;
-  width: 100%;
+  width: auto;
 }
 
 .main-center-content-nav a {
@@ -94,7 +94,7 @@
 
 .main-center-content-tweet-wrapper {
   display: flex;
-  position: relative;
+  height: auto;
   padding: 8px 0;
   border-bottom: 1px rgba(204, 204, 204, 0.6) solid;
 }
@@ -103,7 +103,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: auto;
   z-index: 10;
 }
 
@@ -151,20 +151,36 @@
 
 .tweet-action-list {
   display: flex;
-  margin-top: 10px;
+  height: 20px;
+  margin: 5px 0;
 }
 
-.tweet-action-list button{
+.retweet-info {
+  height: 30px;
+}
+
+.retweet-info span{
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.tweet-text{
+  padding-top: 5px;
+}
+
+.tweet-action-list button {
   padding-right: 50px;
 }
 
 /* ツイートアクション ホバー設定 */
-.action-tweet:hover{
+.action-tweet:hover {
   color: skyblue;
 }
-.action-retweet:hover{
+
+.action-retweet:hover {
   color: lightgreen;
 }
-.action-like:hover{
+
+.action-like:hover {
   color: red;
 }
