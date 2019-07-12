@@ -10,4 +10,10 @@ $(function() {
 	$('.close-modal').click(function(){
 		$('#tweet-nav-modal-container').fadeOut();
 	});
+
+	$(document).on('click', function(event){
+		if(!$(event.target).closest('.tweet-modal').length){
+			$('#tweet-nav-modal-container').fadeOut();
+		}
+	});
 });
