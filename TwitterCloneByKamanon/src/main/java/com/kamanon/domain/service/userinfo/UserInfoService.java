@@ -1,4 +1,4 @@
-package com.kamanon.domain.service.tweet;
+package com.kamanon.domain.service.userinfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,13 +11,13 @@ import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
  * ページのtweetリスト表示関連処理
  */
 @Service
-@Transactional
-public class UserInfoService extends KamanonServiceAbstract {
+public class UserInfoService extends UserInfoServiceAbstract {
 
 	@Autowired
 	UserInfoServiceComponent userInfoServiceComponent;
 
 	@Override
+	@Transactional
 	protected TwitterInfoSelectResult execute(TwitterInfoSelectKey key) {
 		return userInfoServiceComponent.selectUserInfoByUserName(key);
 	}

@@ -1,5 +1,6 @@
-package com.kamanon.domain.service.tweet;
+package com.kamanon.domain.service.userinfo;
 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.kamanon.commons.KamanonBusinessException;
@@ -10,7 +11,7 @@ import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
 /**
  * サービスの基底クラス
  */
-public abstract class KamanonServiceAbstract implements KamanonServiceBase {
+public abstract class UserInfoServiceAbstract implements KamanonServiceBase {
 
 	public TwitterInfoSelectResult executeService(TwitterInfoSelectKey key, Model model) {
 		
@@ -23,8 +24,7 @@ public abstract class KamanonServiceAbstract implements KamanonServiceBase {
 			model.addAttribute("error", k.getMessage());
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("error", "想定外の例外が発生しました。"); // TODO コードべた書きはいかがなものか
+			model.addAttribute("error", "想定外の例外が発生しました。");
 			model.addAttribute("error", e.getMessage());
 		}
 
@@ -34,5 +34,6 @@ public abstract class KamanonServiceAbstract implements KamanonServiceBase {
 	/**
 	 * サブクラスでサービス実装
 	 */
+	@Transactional
 	protected abstract TwitterInfoSelectResult execute(TwitterInfoSelectKey key);
 }

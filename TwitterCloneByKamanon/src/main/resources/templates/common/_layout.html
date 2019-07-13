@@ -93,7 +93,7 @@
 
 	<!--/* ヘッダーTweetモーダル */-->
 	<div th:fragment="header-tweet-modal-fragment" th:remove="tag">
-		<div id="tweet-nav-modal-container" class="close-modal">
+		<div id="tweet-nav-modal-container">
 			<div class="header-tweet-modal-wrapper">
 				<div class="tweet-modal modal">
 					<div class="tweet-modal-top">
@@ -101,13 +101,13 @@
 						<span class="fa fa-times close-modal"></span>
 					</div>
 					<div class="tweet-modal-main-wrapper">
-						<form th:action="@{/index.html}" method="post">
+						<form th:action="@{'/tweet/insert'}" method="post">
 							<div class="tweet-modal-main">
 								<img class="icon" th:src="@{/image/user/coffee.png}" alt="ツイートモーダルユーザーアイコン">
 								<textarea name="tweet-modal-text" rows="3"></textarea>
 							</div>
 							<div class="tweet-modal-bottom">
-									<input class="btn tweet-modal-send" type="submit" name="add_tweet" value="ツイート">
+									<input class="btn tweet-modal-send" type="submit" name="tweetText" value="ツイート">
 							</div>
 						</form>
 					</div>

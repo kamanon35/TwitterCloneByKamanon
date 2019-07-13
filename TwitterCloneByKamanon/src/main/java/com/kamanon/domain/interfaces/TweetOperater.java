@@ -5,7 +5,7 @@ package com.kamanon.domain.interfaces;
  */
 public interface TweetOperater {
 
-	public Integer addTweet();
+	public Integer insertTweet();
 	
 	public Integer deleteTweet();
 }

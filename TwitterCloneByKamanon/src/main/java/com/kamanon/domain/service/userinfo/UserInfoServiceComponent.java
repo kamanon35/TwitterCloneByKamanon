@@ -1,4 +1,4 @@
-package com.kamanon.domain.service.tweet;
+package com.kamanon.domain.service.userinfo;
 
 import java.util.List;
 

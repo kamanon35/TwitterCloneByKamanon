@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.kamanon.domain.model.entity.TwitterInfoSelectKey;
 import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
 import com.kamanon.domain.model.entity.UserInfo;
-import com.kamanon.domain.service.tweet.UserInfoService;
+import com.kamanon.domain.service.userinfo.UserInfoService;
 
 @Controller
 @RequestMapping(value = "{userName}")

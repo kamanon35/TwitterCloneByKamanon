@@ -12,7 +12,7 @@ import com.kamanon.domain.interfaces.TweetOperater;
 public class TweetService implements TweetOperater {
 
 	@Override
-	public Integer addTweet() {
+	public Integer insertTweet() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
