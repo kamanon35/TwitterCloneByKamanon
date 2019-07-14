@@ -29,4 +29,28 @@ WHERE
 ORDER BY created DESC, tweetId DESC
 		]]>
 	</select>
+		<select id="selectLatestTweet"
+		resultType="com.kamanon.domain.model.mybatis.custom.entity.TweetInfoEntity">
+		<![CDATA[
+SELECT
+  t.tweet_id AS tweetId
+  , t.user_id AS userID
+  , t.tweet AS tweet
+  , t.retweet_flg AS retweetFlg
+  , t.created AS created 
+FROM
+  t_tweet AS t 
+WHERE
+  t.user_id = #{userId} 
+  AND t.tweet_id = ( 
+    SELECT
+      MAX(s.tweet_id) 
+    FROM
+      t_tweet s 
+    WHERE
+      s.user_id = #{userId}
+  )
+
+		]]>
+	</select>
 </mapper>

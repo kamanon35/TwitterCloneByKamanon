@@ -24,4 +24,9 @@ public interface TweetInfoMapper {
 	 * リツイートフラグ
 	 * */
 	List<TweetInfoEntity> selectTweetInfoShow(@Param("userId") Long userId, @Param("retweetFlg") String retweetFlg);
+
+	/**
+	 * ユーザーIDの一致する最新レコードを取得
+	 * */
+	TweetInfoEntity selectLatestTweet(@Param("userId") Long userId);
 }

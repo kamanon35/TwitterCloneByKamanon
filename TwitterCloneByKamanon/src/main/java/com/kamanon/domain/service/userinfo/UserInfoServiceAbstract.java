@@ -4,14 +4,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.kamanon.commons.KamanonBusinessException;
-import com.kamanon.domain.interfaces.KamanonServiceBase;
+import com.kamanon.domain.interfaces.UserInfoServiceBase;
 import com.kamanon.domain.model.entity.TwitterInfoSelectKey;
 import com.kamanon.domain.model.entity.TwitterInfoSelectResult;
 
 /**
  * サービスの基底クラス
  */
-public abstract class UserInfoServiceAbstract implements KamanonServiceBase {
+public abstract class UserInfoServiceAbstract implements UserInfoServiceBase {
 
 	public TwitterInfoSelectResult executeService(TwitterInfoSelectKey key, Model model) {
 		

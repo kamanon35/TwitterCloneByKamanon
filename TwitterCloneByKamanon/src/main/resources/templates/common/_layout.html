@@ -104,11 +104,12 @@
 						<form th:action="@{'/tweet/insert'}" method="post">
 							<div class="tweet-modal-main">
 								<img class="icon" th:src="@{/image/user/coffee.png}" alt="ツイートモーダルユーザーアイコン">
-								<textarea name="tweet-modal-text" rows="3"></textarea>
+								<textarea name="tweetText" rows="3"></textarea>
 							</div>
 							<div class="tweet-modal-bottom">
-									<input class="btn tweet-modal-send" type="submit" name="tweetText" value="ツイート">
+									<input class="btn tweet-modal-send" type="submit" value="ツイート">
 							</div>
+							<input type="hidden" name="testId" th:value="${userInfo}">
 						</form>
 					</div>
 				</div>
