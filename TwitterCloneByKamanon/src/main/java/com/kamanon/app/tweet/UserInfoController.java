@@ -37,4 +37,18 @@ public class UserInfoController {
 		
 		return "user_info/show";
 	}
+	@RequestMapping(value = "{userName}", method = RequestMethod.POST)
+	String doCreateUserInfo2(@PathVariable String userName, Model model) {
+		
+		// selectキーを設定
+		TwitterInfoSelectKey key = new TwitterInfoSelectKey();
+		key.setUserName(userName);
+		
+		// ユーザー情報を取得
+		TwitterInfoSelectResult twitterInfoSelectResult = _userInfoService.executeService(key, model);
+		UserInfo userInfo = twitterInfoSelectResult.getUserInfo();
+		model.addAttribute("userInfo", userInfo);
+		
+		return "user_info/show";
+	}
 }

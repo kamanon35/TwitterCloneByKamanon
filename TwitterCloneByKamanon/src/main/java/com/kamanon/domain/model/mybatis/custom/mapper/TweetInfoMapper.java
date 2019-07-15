@@ -29,4 +29,9 @@ public interface TweetInfoMapper {
 	 * ユーザーIDの一致する最新レコードを取得
 	 * */
 	TweetInfoEntity selectLatestTweet(@Param("userId") Long userId);
+	
+	/**
+	 * tweet_id採番
+	 * */
+	Long numberingTweetId();
 }

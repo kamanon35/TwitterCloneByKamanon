@@ -50,7 +50,15 @@ WHERE
     WHERE
       s.user_id = #{userId}
   )
-
+		]]>
+	</select>
+		<select id="numberingTweetId"
+		resultType="java.lang.Long">
+		<![CDATA[
+SELECT
+  MAX(tweet_id + 1) 
+FROM
+  t_tweet
 		]]>
 	</select>
 </mapper>

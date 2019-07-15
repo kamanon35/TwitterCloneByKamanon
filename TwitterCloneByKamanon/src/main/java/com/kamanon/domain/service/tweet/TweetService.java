@@ -1,5 +1,7 @@
 package com.kamanon.domain.service.tweet;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +33,11 @@ public class TweetService implements TweetOperater {
 	public int insertTweet(Long userId, String tweetText) {
 
 		TTweet entity = new TTweet();
+		entity.setTweetId(_tweetInfoMapper.numberingTweetId());
 		entity.setUserId(userId);
 		entity.setTweet(tweetText);
 		entity.setRetweetFlg(KamanonConstants.RETWEET_FLG_OFF);
+		entity.setCreated(LocalDateTime.now());
 
 		return _tTweetMapper.insert(entity);
 	}

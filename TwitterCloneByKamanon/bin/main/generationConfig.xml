@@ -34,13 +34,13 @@
   	  <columnOverride column="updated" javaType="java.time.LocalDateTime" />
     </table>
     <table catalog="tck" tableName="t_tweet" >
- 	   <columnOverride column="created" javaType="java.time.LocalDate" />
+ 	   <columnOverride column="created" javaType="java.time.LocalDateTime" />
     </table>
     <table catalog="tck" tableName="t_follow" >
-		<columnOverride column="created" javaType="java.time.LocalDate" />
+		<columnOverride column="created" javaType="java.time.LocalDateTime" />
 	</table>
 	<table catalog="tck" tableName="t_tweet_action" >
-		<columnOverride column="created" javaType="java.time.LocalDate" />
+		<columnOverride column="created" javaType="java.time.LocalDateTime" />
 		<columnOverride column="updated" javaType="java.time.LocalDateTime" />
 	</table>
   </context>

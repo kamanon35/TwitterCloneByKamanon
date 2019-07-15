@@ -25,7 +25,6 @@ public class UserInfoServiceComponent {
 
 	@Autowired
 	UserInfoMapper _userInfoMapper;
-
 	@Autowired
 	TweetInfoMapper _tweetInfoMapper;
 

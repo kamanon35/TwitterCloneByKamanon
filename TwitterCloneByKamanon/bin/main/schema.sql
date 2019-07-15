@@ -8,11 +8,11 @@
 drop table if exists t_tweet cascade;
 
 create table t_tweet (
-  tweet_id BIGSERIAL NOT NULL PRIMARY KEY
+  tweet_id BIGSERIAL PRIMARY KEY
   , user_id BIGINT NOT NULL
   , tweet TEXT NOT NULL
   , retweet_flg CHAR NOT NULL
-  , created TIMESTAMP
+  , created TIMESTAMP NOT NULL
 ) ;
 
 -- ツイートアクション

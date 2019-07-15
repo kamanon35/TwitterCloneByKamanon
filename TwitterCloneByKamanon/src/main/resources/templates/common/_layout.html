@@ -109,7 +109,8 @@
 							<div class="tweet-modal-bottom">
 									<input class="btn tweet-modal-send" type="submit" value="ツイート">
 							</div>
-							<input type="hidden" name="testId" th:value="${userInfo}">
+							<input type="hidden" name="userId" th:value="${userInfo.userInfoEntity.userId}">
+							<input type="hidden" name="userName" th:value="${userInfo.userInfoEntity.userName}">
 						</form>
 					</div>
 				</div>
