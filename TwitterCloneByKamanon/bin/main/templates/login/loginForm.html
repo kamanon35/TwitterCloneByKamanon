@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
-	<meta name="author" content="kamanon" />
-	<!--/* デフォルトCSSのリセット */-->
-	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <meta name="author" content="kamanon" />
+  <!--/* デフォルトCSSのリセット */-->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <!--/* loginFormのスタイル設定 */-->
-  <link rel="stylesheet" th:href="@{/css/login/login.css}" />
-	<!--/* Webフォント読み込み */-->
-	<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-	<!--/* アイコン(font-awesome)読み込み */-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-	<!--/* ファビコンの設定 */-->
-	<link rel="icon" type="image/ping" th:href="@{/image/header/bird_aoitori_bluebird.png}">
-	<!--/* js読み込み */-->
-	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
-	<!--/* viewportの設定 */-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" th:href="@{/css/login/loginForm.css}" />
+  <!--/* Webフォント読み込み */-->
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <!--/* アイコン(font-awesome)読み込み */-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <!--/* ファビコンの設定 */-->
+  <link rel="icon" type="image/ping" th:href="@{/image/header/bird_aoitori_bluebird.png}">
+  <!--/* js読み込み */-->
+  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+  <!--/* viewportの設定 */-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!--/* タイトル設定 */-->
-	<title>TwitterCloneByKamanonにログイン</title>
+  <!--/* タイトル設定 */-->
+  <title>TwitterCloneByKamanonにログイン</title>
 </head>
+
 <body>
   <!--*/ ヘッダー */-->
   <header>
     <div class="page-header-container">
       <div class="page-header wrapper">
-
-        <nav>
-          <ul class="header-left-nav">
-            <li><span class="fa fa-home"></span>ホーム</li>
-            <li><span class="fa fa-bell"></span>通知</li>
-            <li><span class="fa fa-envelope"></span>メッセージ</li>
-        </nav>
-        <img class="bird-icon header-center-logo" th:src="@{/image/header/bird_aoitori_bluebird.png}" th:alt="ヘッダーアプリアイコン">
-        <nav>
-          <form id="header-form" action="index.html" method="post">
-            <ul class="header-right-nav">
-              <li class="search-key">
-                <input type="text" name="search-key" maxlength="50" placeholder="キーワード検索">
-                <button id="header-search-button" type="submit"><span class="fa fa-search"></span></button>
-              </li>
-              <li>
-                <img class="icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーユーザーアイコン">
-              </li>
-              <li class="header-nav-tweet-box">
-                <button class="btn" id="header-nav-tweet-modal-show" type="button">ツイート</button>
-              </li>
-            </ul>
-          </form>
-        </nav>
+        <img class="bird-icon header-user-icon" th:src="@{/image/user/coffee.png}" th:alt="ヘッダーツイートアイコン">
       </div>
     </div>
   </header>
 
+  <!-- ログインフォーム -->
+  <main id="login-form">
+    <div class="main-content-wrapper wrapper">
+      <div class="login-form-wrapper">
+        <h2>TwitterCloneByKamanonにログイン</h2>
+        <input type="text" name="userName" placeholder="ユーザー名">
+        <input type="text" name="password" placeholder="パスワード">
+        <input type="submit" value="ログイン">
+      </div>
+
+    </div>
+  </main>
 
 </body>
+
 </html>

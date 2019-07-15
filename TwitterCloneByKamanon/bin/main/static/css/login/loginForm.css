@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Font Awesome 5 Free";
+  line-height: 1.7;
+  color: #432;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #e6ecf0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ヘッダー */
+
+.page-header-container {
+  border-bottom: 2px lightgrey solid;
+  height: 50px;
+  width: 100%;
+  background: white;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* スマートフォン向け余白の設定 */
+  /* padding: 0 4%; */
+}
+
+.page-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.bird-icon {
+  height: 30px;
+  width: 30px;
+}
+
+/* ログインフォーム */
+.main-content-wrapper{
+  background-color: #e6ecf0;
+}
+
+.login-form-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border: 2px lightgrey solid;
+}
