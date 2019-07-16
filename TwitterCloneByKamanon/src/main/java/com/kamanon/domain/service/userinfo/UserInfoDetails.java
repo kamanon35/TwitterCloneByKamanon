@@ -32,7 +32,7 @@ public class UserInfoDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return String.valueOf(this.usr.getUserId());
+		return String.valueOf(this.usr.getUserName());
 	}
 
 	@Override

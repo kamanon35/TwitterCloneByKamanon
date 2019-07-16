@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.kamanon.domain.model.mybatis.entity.TUsr;
+import com.kamanon.domain.model.mybatis.entity.TUsrExample;
 import com.kamanon.domain.model.mybatis.mapper.TUsrMapper;
 
 @Service
@@ -18,7 +19,9 @@ public class UserInfoDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		TUsr tUsr = _tUsrMapper.selectByPrimaryKey(Long.parseLong(username));
+		TUsrExample where = new TUsrExample();
+		where.createCriteria().andUserNameEqualTo(username);
+		TUsr tUsr = _tUsrMapper.selectByExample(where).get(0);
 		if (tUsr == null) {
 			throw new UsernameNotFoundException(username + "is not found");
 		}

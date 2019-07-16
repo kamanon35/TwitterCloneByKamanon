@@ -34,14 +34,15 @@
   </header>
 
   <!-- ログインフォーム -->
-  <main id="login-form">
+  <main>
     <div class="main-content-wrapper wrapper">
       <div class="login-form-wrapper">
+        <p th:if="${param.error}">ログインに失敗しました</p>
         <h2>TwitterCloneByKamanonにログイン</h2>
-        <form th:action="@{/login}" method="POST">
-          <input type="text" name="userName" placeholder="ユーザー名">
-          <input type="text" name="password" placeholder="パスワード">
-          <button type="submit" name="button"></button>
+        <form class="login-form" th:action="@{/login}" method="POST">
+          <input type="text" name="username" placeholder="ユーザー名">
+          <input type="password" name="password" placeholder="パスワード">
+          <button class="login-botton btn" type="submit">ログイン</button>
         </form>
       </div>
 

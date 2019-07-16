@@ -1,9 +1,9 @@
 INSERT INTO t_usr (user_name, password, handle_name, email_addr, sex, birthday, created, updated)
-VALUES ('suzuki', 'psuzuki', 'suzuchan', 'suzu@gmaaail.com', '0', DATE'2000-01-02', current_timestamp, current_timestamp);
+VALUES ('suzuki', '$2a$08$AgBbPY1DYZ3hN7XPwinhkeFDVNCqtFWPn6TzRlF6kbPv..B0ckdxS', 'suzuchan', 'suzu@gmaaail.com', '0', DATE'2000-01-02', current_timestamp, current_timestamp);
 INSERT INTO t_usr (user_name, password, handle_name, email_addr, sex, birthday, created, updated)
-VALUES ('uchimura', 'puchimura', 'uchan', 'uchi@gmaaail.com', '1', DATE'2001-02-03', current_timestamp, current_timestamp);
+VALUES ('uchimura', '$2a$08$ME5ve7ggncoi5WFOEGMKKuM4Tqsu8alFHtDt57kyQ3bxzg1Xeg0vS', 'uchan', 'uchi@gmaaail.com', '1', DATE'2001-02-03', current_timestamp, current_timestamp);
 INSERT INTO t_usr (user_name, password, handle_name, email_addr, sex, birthday, created, updated)
-VALUES ('takizawa', 'ptakizawa', 'takky', 'taki@gmaaail.com', '0', DATE'2001-02-03', current_timestamp, current_timestamp);
+VALUES ('takizawa', '$2a$08$H.lwNZ80XocXAB6AtqugK.X3Z5xzM5vR5fqejy1pCnN4mH..2XOSm', 'takky', 'taki@gmaaail.com', '0', DATE'2001-02-03', current_timestamp, current_timestamp);
 
 INSERT INTO t_tweet_action (user_id, tweet_id, retweet_flg, like_flg, created, updated)
 VALUES (1, 3, '1', '1', current_timestamp, current_timestamp);

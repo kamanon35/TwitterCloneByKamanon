@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/_layout :: page_head(${userInfo.userInfoEntity.userName} + 'さんのページ', ~{::link})">
+	<link rel="stylesheet" th:href="@{/css/user_info/show.css}" />
+</head>
+
+<body>
+	<!-- ページヘッダー -->
+	<header th:replace="common/_layout :: page_header"></header>
+	<!-- ユーザー指定ヘッダー画像 -->
+	<img class="header-user-image" th:src="@{/image/user/header_image1.jpg}" th:alt="ユーザーヘッダーイメージ">
+	<!-- メインナビバー -->
+	<div th:replace="common/_layout :: main-nav-bar-fragment"></div>
+	<!-- tweetモーダル -->
+	<div th:replace="common/_layout :: header-tweet-modal-fragment"></div>
+
+	<!-- main -->
+	<main id="main-content">
+		<div class="main-content-wrapper wrapper">
+			<div class="main-left-content">
+				<h2 class="main-left-content-handle-name"><a th:text="${#strings.isEmpty(userInfo.userInfoEntity.handleName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}" th:href="@{#}"></a></h2>
+				<a class="main-left-content-user-name" th:text="'@' + ${userInfo.userInfoEntity.userName}" th:href="@{#}"></a>
+			</div>
+			<div class="main-center-content">
+				<nav class="main-center-content-nav">
+					<a href="#">ツイート</a>
+					<a href="#">ツイートと返信</a>
+					<a href="#">メディア</a>
+				</nav>
+				<!-- TweetリストLoop -->
+				<th:block th:each="tweet_info_th : ${userInfo.tweetInfoEntityList}" th:remove="tag" th:with="userNameWith=${#strings.isEmpty(userInfo.userInfoEntity.handleName)} ? ${userInfo.userInfoEntity.userName} : ${userInfo.userInfoEntity.handleName}">
+					<div class="main-center-content-tweet-wrapper">
+						<div class="tweet-user-icon">
+							<img class="icon" th:src="@{/image/user/coffee.png}" th:alt="ツイートユーザーアイコン">
+						</div>
+						<div class="tweet-wrapper">
+							<div th:if="${tweet_info_th.retweetFlg} == '1'" class="retweet-info">
+								<span class="fa fa-retweet"></span>
+								<span th:text="${userNameWith} + 'さんがリツイート'"></span>
+							</div>
+							<div class="tweet-head-wrapper">
+								<div class="tweet-user-info">
+									<span class="tweet-handlename" th:text="${userNameWith}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-username" th:text="'@' + ${userInfo.userInfoEntity.userName}">XXXXXXXXXXXXXXXXXXXX</span>
+									<span class="tweet-time" th:text="'・' + ${tweet_info_th.created}"></span>
+								</div>
+								<div class="tweet-menu">
+									<span class="fa fa-chevron-down"></span>
+								</div>
+							</div>
+							<div class="tweet-text" th:text="${tweet_info_th.tweet}">XXXXXXXXXXXXXXXXXXXX</div>
+							<div class="tweet-action-list">
+								<button type="button" class="comment-button" name="comment-button"><span class="fa fa-comment action-tweet"></span></button>
+								<button type="button" class="retweet-button" name="retweet-button"><span class="fa fa-retweet action-retweet"></span></button>
+								<button type="button" class="like-button" name="like-button"><span class="fa fa-heart action-like"></span></button>
+							</div>
+						</div>
+					</div>
+				</th:block>
+			</div>
+			<div class="main-right-content">
+
+			</div>
+		</div>
+	</main>
+
+	<!--/* 画面固有 スクリプト設定 */-->
+	<div th:replace="common/_layout :: load-scripts(~{})" th:remove="tag">
+
+	</div>
+</body>
+
+</html>
